@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bc35e15-7ea9-498a-92dc-708ecb711f04" name="Changes" comment="add Routes">
-      <change afterPath="$PROJECT_DIR$/cv/src/pages/Demo/Demo.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cv/src/pages/Error/Error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cv/src/pages/Error/Error.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/src/common/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/cv/src/common/AppRoutes.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cv/src/common/Routes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/cv/src/common/Routes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv/src/pages/Demo/Demo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/cv/src/pages/Demo/Demo.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,20 +32,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Andriy/Desktop/Logos/Resume/AndriyResume.github.io/cv/src/pages",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Andriy/Desktop/Logos/Resume/AndriyResume.github.io/cv/src/pages&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Andriy\Desktop\Logos\Resume\AndriyResume.github.io\cv\src\pages" />
@@ -63,7 +64,7 @@
       <updated>1680956915745</updated>
       <workItem from="1680956919811" duration="679000" />
       <workItem from="1680957649949" duration="3946000" />
-      <workItem from="1681213721112" duration="9855000" />
+      <workItem from="1681213721112" duration="12689000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1680957190968</created>
@@ -100,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680962112717</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="done Demo">
+      <created>1681224044446</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681224044446</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +118,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="delete idea" />
     <MESSAGE value="add Routes" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Routes" />
+    <MESSAGE value="done Demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="done Demo" />
   </component>
 </project>
