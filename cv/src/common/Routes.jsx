@@ -1,6 +1,7 @@
 import {createBrowserRouter} from 'react-router-dom';
 import {AppRoutes} from "./AppRoutes";
-import {Demo} from "../pages/Demo/Demo";
+import Demo from "../pages/Demo/Demo";
+
 export const router = createBrowserRouter([
     {
         path:AppRoutes.MAIN,
