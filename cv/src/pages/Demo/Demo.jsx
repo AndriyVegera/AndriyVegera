@@ -5,7 +5,7 @@ const Demo = ()=>{
             <div className={styles.container}>
                 <div className={styles.profile}>
                     <div>
-                        <div className={styles.profile_img}>
+                        <div>
                             <img className={styles.img} src="https://st4.depositphotos.com/4678277/28917/i/600/depositphotos_289173464-stock-photo-close-up-photo-amazing-he.jpg" alt="sad"/>
                         </div>
                     </div>
@@ -23,6 +23,7 @@ const Demo = ()=>{
                             acquaintances, I want to become a Junior developer in Frontend development and develop in this direction.
                         </p>
                     </div>
+                    <div className={styles.login}><button className={styles.buttonLogin} type="button">Login</button></div>
                 </div>
                 <div className={styles.group1}>
                     <div className="skills">

@@ -1,7 +1,7 @@
 .general{
   font-family: Inter, sans-serif;
   color: white;
-  width: 55%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
@@ -12,7 +12,7 @@
   margin: 0 auto;
   display: grid;
   padding: 3rem;
-  background: #070707;
+  background: #0c1022;
   grid-template-columns: 1fr 1fr;
   border-radius:20px ;
 }
@@ -110,14 +110,12 @@
   font-size: 1.2rem;
   font-weight: 400;
   color:gray ;
-  //line-height: 1.5;
 }
 .experience_list_year{
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 400;
   color:white ;
-  //line-height: 1.5;
 }
 .interests_list{
   margin-top: 1rem;
@@ -140,28 +138,24 @@
   font-size: 1.2rem;
   font-weight: 400;
   color:gray ;
-  //line-height: 1.5;
 }
 .personalData_phone{
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 400;
   color:gray ;
-  //line-height: 1.5;
 }
 .personalData_dateOfBrh{
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 400;
   color:gray ;
-  //line-height: 1.5;
 }
 .personalData_email{
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: 400;
   color:gray ;
-  //line-height: 1.5;
 }
 .group1{
   display: flex;
@@ -173,4 +167,22 @@
   flex-flow: column;
   gap: 5px;
 }
-
+.login{
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+  margin-top: 20px;
+  text-align: right;
+}
+.buttonLogin{
+  position: absolute;
+  width: 110px;
+  height: 60px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0c1022;
+  background-color: orange;
+  border: 2px solid black;
+}
