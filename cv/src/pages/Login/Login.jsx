@@ -38,7 +38,7 @@ const Login = ()=>{
                                 <EmailField />
                                 <PasswordField/>
                                 <VerifyPasswordField/>
-                                <Button appearance="primary" type="submit" className={login.buttonLogin}>
+                                <Button className={login.buttonLogin} appearance="primary" type="submit" >
                                     Login
                                 </Button>
                             </Form>

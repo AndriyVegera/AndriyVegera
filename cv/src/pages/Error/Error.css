@@ -30,16 +30,20 @@
   justify-content: center;
   align-items: center;
   margin-top: -150px;
+  font-size: 70px;
+  font-weight: 900;
 }
 .p{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 70px;
+  font-weight: 900;
 }
 .link_404{
   color: #fff!important;
-  padding: 10px 20px;
-  font-size:14px ;
+  padding: 30px 50px;
+  font-size:34px ;
   background: #39ac31;
   margin-left: 46%;
   border: none;
