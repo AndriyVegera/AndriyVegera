@@ -1,4 +1,5 @@
 import styles from './Demo.module.scss'
+import {ButtonDemoLink} from "../../components/HOC/RouteHOC";
 const Demo = ()=>{
     return(
         <div className={styles.general}>
@@ -23,7 +24,7 @@ const Demo = ()=>{
                             acquaintances, I want to become a Junior developer in Frontend development and develop in this direction.
                         </p>
                     </div>
-                    <div className={styles.login}><button className={styles.buttonLogin} type="button">Login</button></div>
+                    <ButtonDemoLink/>
                 </div>
                 <div className={styles.group1}>
                     <div className="skills">
