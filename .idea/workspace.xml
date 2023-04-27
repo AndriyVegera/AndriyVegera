@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bc35e15-7ea9-498a-92dc-708ecb711f04" name="Changes" comment="Styles">
-      <change afterPath="$PROJECT_DIR$/cv/src/components/HOC/RouteHOC.js" afterDir="false" />
+    <list default="true" id="2bc35e15-7ea9-498a-92dc-708ecb711f04" name="Changes" comment="Add Link-ButtonDemoLink">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv/src/components/Header/Header.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv/src/pages/Demo/Demo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/cv/src/pages/Demo/Demo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv/src/pages/Demo/Demo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cv/src/pages/Demo/Demo.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/src/components/HOC/RouteHOC.js" beforeDir="false" afterPath="$PROJECT_DIR$/cv/src/components/HOC/RouteHOC.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +67,9 @@
       <workItem from="1681319017033" duration="353000" />
       <workItem from="1681319392765" duration="1691000" />
       <workItem from="1681321149956" duration="48000" />
-      <workItem from="1681739507169" duration="2007000" />
+      <workItem from="1681739507169" duration="2616000" />
+      <workItem from="1682359261254" duration="113000" />
+      <workItem from="1682618676470" duration="317000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1680957190968</created>
@@ -135,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681321078801</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add Link-ButtonDemoLink">
+      <created>1681741937802</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681741937802</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +155,7 @@
     <MESSAGE value="done Error-page" />
     <MESSAGE value="Login page" />
     <MESSAGE value="Styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Styles" />
+    <MESSAGE value="Add Link-ButtonDemoLink" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Link-ButtonDemoLink" />
   </component>
 </project>

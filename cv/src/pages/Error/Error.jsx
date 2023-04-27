@@ -1,4 +1,5 @@
 import './Error.css'
+import {ButtonGoHome} from "../../components/HOC/RouteHOC";
 const Error = ()=>{
     return(
         <section className="page_404">
@@ -12,7 +13,7 @@ const Error = ()=>{
                             <div className="contant_box_404">
                                 <h3 className="h2">Look like you're lost</h3>
                                 <p className="p">The page you are looking for not avaible!</p>
-                                <button className="link_404">Go to Home</button>
+                                <ButtonGoHome/>
                             </div>
                         </div>
                     </div>
