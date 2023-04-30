@@ -2,8 +2,9 @@ import {createBrowserRouter} from 'react-router-dom';
 import {AppRoutes} from "./AppRoutes";
 import Demo from "../pages/Demo/Demo";
 import Error from "../pages/Error/Error";
-import Login from "../pages/Login/Login";
 import Admin from "../pages/Admin/Admin";
+import Login2 from "../pages/Login2/Login2";
+import LoginHOC from "../components/HOC/LoginHOC";
 
 export const router = createBrowserRouter([
     {
@@ -13,7 +14,7 @@ export const router = createBrowserRouter([
     },
     {
         path:AppRoutes.LOGIN,
-        element: <Login/>
+        element: <LoginHOC Component={Login2}/>
     },
     {
         path:AppRoutes.ADMIN,

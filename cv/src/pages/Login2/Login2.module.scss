@@ -1,0 +1,98 @@
+.container{
+  position: relative;
+  width: 800px;
+  height: 1050px;
+  background: rgba(0,0,0,0.75);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 32px;
+  overflow: hidden;
+}
+.container::before{
+  content: '';
+  position: absolute;
+  height: 1450px;
+  width: 1450px;
+  background: conic-gradient(transparent, transparent, transparent, #d400d4);
+  animation: animate 4s linear infinite;
+  animation-delay: -2s;
+}
+.container::after{
+  content: '';
+  position: absolute;
+  height: 1450px;
+  width: 1450px;
+  background: conic-gradient(transparent, transparent, transparent, #00cfff);
+  animation: animate 4s linear infinite;
+}
+@keyframes animate {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #0c1022;
+}
+#form{
+  width: 760px;
+  height: 50px;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #fff;
+  font-size: 40px;
+  background: transparent;
+  outline: none;
+  color: white;
+}
+.buttonLogin{
+  width: 210px;
+  height: 70px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+}
+.buttonLogin:hover{
+  color: #fff;
+  background-color: #0c1022;
+  border: 2px solid #fff;
+}
+.image{
+  position: absolute;
+  inset: 5px;
+  background-color: #0c1022;
+  z-index: 1;
+  border-radius: 16px;
+}
+.formBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  min-height: 60vh;
+}
+h2{
+  font-size: 86px;
+  color: #fff;
+  text-align: center;
+
+}
