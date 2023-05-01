@@ -1,46 +1,65 @@
-import login from './Login.module.scss'
-import { Form, Button, Schema } from 'rsuite';
-const Login = ()=>{
-    const emailRule = Schema.Types.StringType().isEmail().isRequired('Please enter a valid email address.');
-    const passwordRule = Schema.Types.StringType().isRequired('Please enter a valid password.').minLength(6, 'Minimum 6 characters required').containsUppercaseLetter('Must contain uppercase English characters').containsLowercaseLetter('Must contain lower English characters');
-    const verifyPasswordRule = Schema.Types.StringType().addRule((value,data)=>{
-        return value!==data.password?false:true
-    },'The two passwords do not match').isRequired('This field is required.');
-    function EmailField() {
-        return (
-            <Form.Group controlId={login.email}>
-                <Form.Control name="email" rule={emailRule} placeholder="Email"/>
-            </Form.Group>
-        );
-    }
-    function PasswordField() {
-        return (
-            <Form.Group controlId={login.password}>
-                <Form.Control name="password" rule={passwordRule} placeholder="Password"/>
-            </Form.Group>
-        );
-    }
-    function VerifyPasswordField() {
-        return (
-            <Form.Group controlId={login.verifyPassword}>
-                <Form.Control name="verifyPassword" rule={verifyPasswordRule} placeholder="Verify Password" />
-            </Form.Group>
-        );
-    }
-    return(
+import React from 'react';
+import { Form, Button, ButtonToolbar, Schema } from 'rsuite';
+import login from "./Login.module.scss";
+
+
+const TextField = (props) => {
+    const {name, accepter, placeholder, ...rest} = props;
+    return (
+        <Form.Group controlId={login.form}>
+            <Form.Control name={name} accepter={accepter} placeholder={placeholder} {...rest} />
+        </Form.Group>
+    );
+};
+const {StringType} = Schema.Types;
+
+const model = Schema.Model({
+    email: StringType()
+        .isEmail('Please enter a valid email address.')
+        .isRequired('This field is required.'),
+
+    password: StringType()
+        .isRequired('This field is required.')
+        .minLength(6, 'Minimum 6 characters required')
+        .containsUppercaseLetter('Must contain uppercase English characters'),
+});
+
+const Login = ({handleLogin}) => {
+    const formRef = React.useRef();
+    // const [formError, setFormError] = React.useState({});
+    const [formValue, setFormValue] = React.useState({
+        email: '',
+        password: '',
+    });
+
+    const handleSubmit = () => {
+        if (!formRef.current.check()) {
+            return;
+        }
+        console.log('onSubmit', formValue);
+        handleLogin(formValue);
+    };
+
+    return (
         <div className={login.body}>
             <div className={login.container}>
                 <div className={login.image}>
                     <div className={login.formBox}>
                         <div className="form">
                             <h2>Login</h2>
-                            <Form>
-                                <EmailField />
-                                <PasswordField/>
-                                <VerifyPasswordField/>
-                                <Button className={login.buttonLogin} appearance="primary" type="submit" >
-                                    Login
-                                </Button>
+                            <Form
+                                model={model}
+                                ref={formRef}
+                                onChange={setFormValue}
+                                formValue={formValue}
+                            >
+                                <TextField name="email" placeholder="Email" label="Email"/>
+                                <TextField name="password" placeholder="Password" type="password" autoComplete="off" />
+                                <ButtonToolbar>
+                                    <Button className={login.buttonLogin} appearance="primary" type="submit" onClick={handleSubmit}>
+                                        Login
+                                    </Button>
+                                </ButtonToolbar>
                             </Form>
                         </div>
                     </div>
@@ -48,5 +67,6 @@ const Login = ()=>{
             </div>
         </div>
     )
-}
+};
+
 export default Login;

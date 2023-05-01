@@ -1,12 +1,10 @@
-import React from 'react';
-import { Form, Button, ButtonToolbar, Schema } from 'rsuite';
-import login from "../Login2/Login2.module.scss";
-
-
+import signUp from './SignUp.module.scss'
+import {Form, Button, Schema, ButtonToolbar} from 'rsuite';
+import React from "react";
 const TextField = (props) => {
     const {name, accepter, placeholder, ...rest} = props;
     return (
-        <Form.Group controlId={login.form}>
+        <Form.Group controlId={signUp.form}>
             <Form.Control name={name} accepter={accepter} placeholder={placeholder} {...rest} />
         </Form.Group>
     );
@@ -30,9 +28,8 @@ const model = Schema.Model({
         .isRequired('This field is required.')
 });
 
-const Login2 = ({handleLogin}) => {
+const SignUp = ({handleSignUp}) => {
     const formRef = React.useRef();
-    // const [formError, setFormError] = React.useState({});
     const [formValue, setFormValue] = React.useState({
         email: '',
         password: '',
@@ -44,16 +41,16 @@ const Login2 = ({handleLogin}) => {
             return;
         }
         console.log('onSubmit', formValue);
-        handleLogin(formValue);
+        handleSignUp(formValue);
     };
 
     return (
-        <div className={login.body}>
-            <div className={login.container}>
-                <div className={login.image}>
-                    <div className={login.formBox}>
+        <div className={signUp.body}>
+            <div className={signUp.container}>
+                <div className={signUp.image}>
+                    <div className={signUp.formBox}>
                         <div className="form">
-                            <h2>Login</h2>
+                            <h2>Sign Up</h2>
                             <Form
                                 model={model}
                                 ref={formRef}
@@ -69,8 +66,8 @@ const Login2 = ({handleLogin}) => {
                                     autoComplete="off"
                                 />
                                 <ButtonToolbar>
-                                    <Button className={login.buttonLogin} appearance="primary" type="submit" onClick={handleSubmit}>
-                                        Login
+                                    <Button className={signUp.buttonLogin} appearance="primary" type="submit" onClick={handleSubmit}>
+                                        Sign Up
                                     </Button>
                                 </ButtonToolbar>
                             </Form>
@@ -82,4 +79,4 @@ const Login2 = ({handleLogin}) => {
     )
 };
 
-export default Login2;
+export default SignUp;

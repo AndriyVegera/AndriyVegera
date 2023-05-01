@@ -3,8 +3,10 @@ import {AppRoutes} from "./AppRoutes";
 import Demo from "../pages/Demo/Demo";
 import Error from "../pages/Error/Error";
 import Admin from "../pages/Admin/Admin";
-import Login2 from "../pages/Login2/Login2";
-import LoginHOC from "../components/HOC/LoginHOC";
+import Login from "../pages/Login/Login";
+import LoginHOC from "../components/HOC/SignUpLoginHOC";
+import SignUp from "../pages/SignUp/SignUp";
+import SignUpLoginHOC from "../components/HOC/SignUpLoginHOC";
 
 export const router = createBrowserRouter([
     {
@@ -13,8 +15,12 @@ export const router = createBrowserRouter([
         errorElement:<Error/>
     },
     {
+      path:AppRoutes.SIGNUP,
+      element:<SignUpLoginHOC Component={SignUp}/>
+    },
+    {
         path:AppRoutes.LOGIN,
-        element: <LoginHOC Component={Login2}/>
+        element: <SignUpLoginHOC Component={Login}/>
     },
     {
         path:AppRoutes.ADMIN,
