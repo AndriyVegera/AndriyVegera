@@ -1,6 +1,6 @@
-import styles from './Demo.module.scss'
-import {ButtonDemoLink} from "../../components/HOC/RouteHOC";
-const Demo = ()=>{
+import styles from './Admin.module.scss'
+import {ButtonEdit} from "../../../components/HOC/RouteHOC";
+const Admin = ()=>{
     return(
         <div className={styles.general}>
             <div className={styles.container}>
@@ -24,7 +24,7 @@ const Demo = ()=>{
                             acquaintances, I want to become a Junior developer in Frontend development and develop in this direction.
                         </p>
                     </div>
-                    <ButtonDemoLink/>
+                    <ButtonEdit/>
                 </div>
                 <div className={styles.group1}>
                     <div className="skills">
@@ -103,4 +103,4 @@ const Demo = ()=>{
         </div>
     )
 }
-export default Demo;
+export default Admin;
