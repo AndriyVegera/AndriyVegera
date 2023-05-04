@@ -6,7 +6,7 @@ import {AppRoutes} from "../../common/AppRoutes";
 const SignUpLoginHOC = ({Component})=>{
     onAuthStateChanged(auth, (currentUser)=>console.log(currentUser));
     const navigate = useNavigate()
-     const handleLogin = async (formValue)=>{
+     const handleSignIn = async (formValue)=>{
         try {
             const response = await signInWithEmailAndPassword(auth, formValue.email, formValue.password );
             console.log(response);
@@ -19,7 +19,6 @@ const SignUpLoginHOC = ({Component})=>{
     const handleSignUp = async (formValue)=>{
         try {
             const response = await createUserWithEmailAndPassword(auth, formValue.email, formValue.password );
-            console.log(response);
             response?.user?.uid && navigate(AppRoutes.LOGIN);
         }
         catch (e){
@@ -27,7 +26,7 @@ const SignUpLoginHOC = ({Component})=>{
         }
     }
     return <Component
-        handleLogin={handleLogin}
+        handleSignIn={handleSignIn}
         handleSignUp = {handleSignUp}
         />
 }

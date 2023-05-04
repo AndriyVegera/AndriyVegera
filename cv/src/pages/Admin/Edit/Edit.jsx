@@ -1,6 +1,6 @@
-import styles from "./Admin.module.scss"
-import {ButtonDemoLink} from "../../components/HOC/RouteHOC";
-const Admin = ()=>{
+import styles from "./Edit.module.scss"
+import {ButtonDemoLink} from "../../../components/HOC/RouteHOC";
+const Edit = ()=>{
     return(
         <div className={styles.general}>
             <div className={styles.container}>
@@ -151,4 +151,4 @@ const Admin = ()=>{
         </div>
     )
 }
-export default Admin;
+export default Edit;

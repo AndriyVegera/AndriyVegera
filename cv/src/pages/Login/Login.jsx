@@ -24,7 +24,7 @@ const model = Schema.Model({
         .containsUppercaseLetter('Must contain uppercase English characters'),
 });
 
-const Login = ({handleLogin}) => {
+const Login = ({handleSignIn}) => {
     const formRef = React.useRef();
     // const [formError, setFormError] = React.useState({});
     const [formValue, setFormValue] = React.useState({
@@ -37,7 +37,7 @@ const Login = ({handleLogin}) => {
             return;
         }
         console.log('onSubmit', formValue);
-        handleLogin(formValue);
+        handleSignIn(formValue);
     };
 
     return (

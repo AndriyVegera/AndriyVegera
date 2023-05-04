@@ -1,6 +1,6 @@
 import styles from './Demo.module.scss'
 import {ButtonDemoLink} from "../../components/HOC/RouteHOC";
-const Demo = ()=>{
+const Demo = (isEditMode)=>{
     return(
         <div className={styles.general}>
             <div className={styles.container}>
