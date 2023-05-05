@@ -40,7 +40,6 @@ const Edit = ()=>{
                             <button>Add</button>
                         </div>
                     </div>
-                    <ButtonDemoLink/>
                 </div>
                 <div className={styles.group1}>
                     <div className="skills">
