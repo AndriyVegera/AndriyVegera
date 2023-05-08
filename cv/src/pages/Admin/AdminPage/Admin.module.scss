@@ -3,15 +3,15 @@
   margin-right: auto;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  //text-align: right;
+  padding-top: 30px;
+  background-color: #0c1022;
+  padding-bottom: 50px;
 }
 .buttonEditSave{
-  //position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   margin-left: 90%;
   cursor: pointer;
   width: 110px;
@@ -22,5 +22,4 @@
   color: #0c1022;
   background-color: orange;
   border: 2px solid black;
-
 }

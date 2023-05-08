@@ -4,7 +4,9 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2%;
+  background-color: #0c1022;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 .container{
   max-width: 1000px;
@@ -15,6 +17,7 @@
   background: #0c1022;
   grid-template-columns: 1fr 1fr;
   border-radius:20px ;
+  border: 5px solid orange;
 }
 .profile{
   display: flex;
@@ -167,12 +170,22 @@
   flex-flow: column;
   gap: 5px;
 }
+.signUp{
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 140px;
+  margin-top: -25px;
+  text-align: right;
+}
 .login{
   margin-left: auto;
   display: flex;
   justify-content: flex-end;
-  margin-right: 30px;
-  margin-top: 20px;
+  align-items: center;
+  margin-right: 60px;
+  margin-top: -25px;
   text-align: right;
 }
 .buttonLogin{
@@ -185,5 +198,5 @@
   font-weight: 600;
   color: #0c1022;
   background-color: orange;
-  border: 2px solid black;
+  border: 4px solid black;
 }

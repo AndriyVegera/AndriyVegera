@@ -1,5 +1,4 @@
 import styles from "./Edit.module.scss"
-import {ButtonDemoLink} from "../../../components/HOC/RouteHOC";
 const Edit = ()=>{
     return(
         <div className={styles.general}>
@@ -16,28 +15,24 @@ const Edit = ()=>{
                                 Vehera
                             </span>
                             <div>
-                                <input type="text"/>
-                                <button>Add</button>
+                                <input className={styles.input} type="text" placeholder="Surname"/>
                             </div>
                             <span className={styles.profile_name_secondName}>
                                 Andrii
                             </span>
                             <div>
-                                <input type="text"/>
-                                <button>Add</button>
+                                <input className={styles.input} type="text" placeholder="Name"/>
                             </div>
                         </h1>
                         <p className={styles.profile_title}>Frontend Developer</p>
                         <div>
-                            <input type="text"/>
-                            <button>Add</button>
+                            <input className={styles.input} type="text" placeholder="Position"/>
                         </div>
                         <p className={styles.description}>Andriy, 19 years old, ready to learn new things, sociable, stress-resistant, loves new things
                             acquaintances, I want to become a Junior developer in Frontend development and develop in this direction.
                         </p>
                         <div>
-                            <input type="text"/>
-                            <button>Add</button>
+                            <input className={styles.input} type="text" placeholder="Info"/>
                         </div>
                     </div>
                 </div>
@@ -52,7 +47,7 @@ const Edit = ()=>{
                             <li>Git</li>
                         </ul>
                         <div>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Skills"/>
                             <button>Add</button>
                         </div>
                     </div>
@@ -63,7 +58,7 @@ const Edit = ()=>{
                             <li>English</li>
                         </ul>
                         <div>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Languages"/>
                             <button>Add</button>
                         </div>
                     </div>
@@ -71,13 +66,9 @@ const Edit = ()=>{
                         <h3 className={styles.title}>Education</h3>
                         <div className="education_list">
                             <p className={styles.education_list_year}> September 2009 - May 2018</p>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Education Year"/>
                             <p className={styles.education_list_text}>Vinnychky gymnasium of Davydivska village council of Lviv district</p>
-                            <input type="text"/>
-                            <p className={styles.education_list_year}>September 2018 - June 2023</p>
-                            <input type="text"/>
-                            <p className={styles.education_list_text}>Technical College of the National University "Lviv Polytechnic"</p>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Education Text"/>
                         </div>
                         <button>Add</button>
                     </div>
@@ -85,9 +76,9 @@ const Edit = ()=>{
                         <h3 className={styles.title}>Courses</h3>
                         <div className="courses_list">
                             <p className={styles.courses_list_year}>September 2022 - May 2023</p>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Courses Year"/>
                             <p className={styles.courses_list_text}>Frontend developer - Logos</p>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Courses Text"/>
                         </div>
                         <button>Add</button>
                     </div>
@@ -97,13 +88,13 @@ const Edit = ()=>{
                         <h3 className={styles.title}>Personal data</h3>
                         <div className="personalData_list">
                             <p className={styles.personalData_address}>Village of Vynnychki, Lviv region 81150</p>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Address"/>
                             <p className={styles.personalData_phone}>+380631894170</p>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Phone number"/>
                             <p className={styles.personalData_dateOfBrh}>07-12-2003</p>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Date of Birthday"/>
                             <p className={styles.personalData_email}>vegeraandrij@gmail.com</p>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Email Address"/>
                         </div>
                         <button>Save</button>
                     </div>
@@ -115,7 +106,7 @@ const Edit = ()=>{
                             <li>Volleyball</li>
                         </ul>
                         <div>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Interest"/>
                             <button>Add</button>
                         </div>
                     </div>
@@ -131,7 +122,7 @@ const Edit = ()=>{
                             <li>Tiktok</li>
                         </ul>
                         <div>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Social Network"/>
                             <button>Add</button>
                         </div>
                     </div>
@@ -139,9 +130,9 @@ const Edit = ()=>{
                         <h3 className={styles.title}>Experience</h3>
                         <div className="experience_list">
                             <p className={styles.experience_list_year}>April 2023</p>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Experience Year"/>
                             <p className={styles.experience_list_text}>No work experience</p>
-                            <input type="text"/>
+                            <input className={styles.input} type="text" placeholder="Experience Text"/>
                         </div>
                         <button>Add</button>
                     </div>

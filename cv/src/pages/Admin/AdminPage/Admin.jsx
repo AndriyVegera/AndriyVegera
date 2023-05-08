@@ -1,10 +1,14 @@
 import style from './Admin.module.scss'
 import AdminHOC from "../../../components/HOC/AdminHOC";
+import {AdminNavBar} from "./AdminNavBar";
 const Admin = ()=>{
     return(
-        <div className={style.editSave}>
-            <AdminHOC/>
-        </div>
+        <>
+            <AdminNavBar/>
+            <div className={style.editSave}>
+                <AdminHOC/>
+            </div>
+        </>
     )
 }
 export default Admin;

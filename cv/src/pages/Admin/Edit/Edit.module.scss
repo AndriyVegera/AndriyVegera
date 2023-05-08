@@ -15,6 +15,7 @@
   background: #0c1022;
   grid-template-columns: 1fr 1fr;
   border-radius:20px ;
+  border: 5px solid orange;
 }
 .profile{
   display: flex;
@@ -167,23 +168,12 @@
   flex-flow: column;
   gap: 5px;
 }
-.login{
-  margin-left: auto;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 30px;
-  margin-top: 20px;
-  text-align: right;
-}
-.buttonLogin{
-  position: absolute;
-  cursor: pointer;
-  width: 110px;
-  height: 60px;
+.input{
+  width: 300px;
+  height: 40px;
   border-radius: 10px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #0c1022;
-  background-color: orange;
-  border: 2px solid black;
+  font-size: 30px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding-left: 10px;
 }
