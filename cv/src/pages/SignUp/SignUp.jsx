@@ -3,6 +3,7 @@ import {Form, Button, Schema, ButtonToolbar} from 'rsuite';
 import React from "react";
 const TextField = (props) => {
     const {name, accepter, placeholder, ...rest} = props;
+    console.log(rest, accepter);
     return (
         <Form.Group controlId={signUp.form}>
             <Form.Control name={name} accepter={accepter} placeholder={placeholder} {...rest} />
@@ -38,6 +39,7 @@ const SignUp = ({handleSignUp}) => {
 
     const handleSubmit = () => {
         if (!formRef.current.check()) {
+            console.log('ERRORS');
             return;
         }
         console.log('onSubmit', formValue);

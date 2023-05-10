@@ -1,7 +1,49 @@
 import styles from "./Edit.module.scss"
-const Edit = ()=>{
+const Edit = ()=> {
+    // const data = useSelector()//redux{
+    // const [formValue, setFormValue useState///null
+// generalInfo:{
+//     name:
+//     fullname://
+// }
+
+//     useEffect(()=>{
+// setGeneralFormValue(data.generalInfo)
+// setSkillsFormValue(data.skills)
+// setEducationlFormValue(data.education)
+//     }, [data])
+
+    // skills:[
+    //   'A', 'B', 'C', ''
+    // ]
+// div skills
+//     {formValue.skills.map(skill, idx =>
+//     <input>
+//         value={skill}
+//         <button onClick={()=> {
+//             const skills = [...formValue.skills]
+//             skills.splice(idx, 1)
+//             setSkillsFormValue(skills)
+//         }}>Delete</button>
+//     </input>
+//     )}
+//     button Add
+//     ()=> {
+//     const skills = [...formValue.skills]
+//       skills.push('')
+//         setSkillsFormValue(skills)
+//     }
+//
+//     ()=> sendData(
+//       {
+//           skills: skillsFormValue,
+//           generalInfo: giFV
+//       }
+//     )
+cv/:userId
     return(
         <div className={styles.general}>
+            {/*{!formValue ? <Loader /> : */}
             <div className={styles.container}>
                 <div className={styles.profile}>
                     <div>
@@ -12,7 +54,7 @@ const Edit = ()=>{
                     <div className={styles.profile_info}>
                         <h1>
                             <span className={styles.profile_name_firstName}>
-                                Vehera
+                                {/*{formValue.name}*/}
                             </span>
                             <div>
                                 <input className={styles.input} type="text" placeholder="Surname"/>

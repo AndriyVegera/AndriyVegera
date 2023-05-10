@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bc35e15-7ea9-498a-92dc-708ecb711f04" name="Changes" comment="Add LoginHOC and firebase" />
+    <list default="true" id="326c9c23-85db-47ce-b984-55fdabb0b475" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/cv/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/cv/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cv/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/cv/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/src/pages/Admin/Edit/Edit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/cv/src/pages/Admin/Edit/Edit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/src/pages/SignUp/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/cv/src/pages/SignUp/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv/src/pages/SignUp/SignUp.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/cv/src/pages/SignUp/SignUp.module.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,15 +22,36 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="d17eba2a1fb5d08bb3281df492fc08aca28470e6" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="development" />
+                    <option name="lastUsedInstant" value="1683730080" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2O8zICKGednUDprvkBOSIF7arOK" />
+  <component name="ProjectId" id="2Pbdvo6QV4SzXnZVVLlKPCfUWLh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,7 +61,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Andriy/Desktop/Logos/React/Git/petroIvaniv.github.io/cv",
+    "last_opened_file_path": "/Users/kurylov/Documents/Work/Logos/07_09_1730/students/AndriyResume.github.io",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -40,146 +70,31 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Andriy\Desktop\Logos\Resume\AndriyResume.github.io\cv\src\pages\Login2" />
-      <recent name="C:\Users\Andriy\Desktop\Logos\Resume\AndriyResume.github.io\cv\src\pages" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Andriy\Desktop\Logos\Resume\AndriyResume.github.io\cv\src\pages\Demo" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2bc35e15-7ea9-498a-92dc-708ecb711f04" name="Changes" comment="" />
-      <created>1680956915745</created>
+      <changelist id="326c9c23-85db-47ce-b984-55fdabb0b475" name="Changes" comment="" />
+      <created>1683729947516</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1680956915745</updated>
-      <workItem from="1680956919811" duration="679000" />
-      <workItem from="1680957649949" duration="3946000" />
-      <workItem from="1681213721112" duration="12826000" />
-      <workItem from="1681293291570" duration="62000" />
-      <workItem from="1681303812435" duration="9767000" />
-      <workItem from="1681319017033" duration="353000" />
-      <workItem from="1681319392765" duration="1691000" />
-      <workItem from="1681321149956" duration="48000" />
-      <workItem from="1681739507169" duration="2616000" />
-      <workItem from="1682359261254" duration="113000" />
-      <workItem from="1682618676470" duration="1276000" />
-      <workItem from="1682775749047" duration="3589000" />
-      <workItem from="1682844711869" duration="7477000" />
+      <updated>1683729947516</updated>
+      <workItem from="1683729948680" duration="113000" />
+      <workItem from="1683730070471" duration="4245000" />
     </task>
-    <task id="LOCAL-00001" summary="init">
-      <created>1680957190968</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1680957190968</updated>
-    </task>
-    <task id="LOCAL-00002" summary="delete idea">
-      <created>1680957492990</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1680957492990</updated>
-    </task>
-    <task id="LOCAL-00003" summary="delete idea">
-      <created>1680958199057</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1680958199057</updated>
-    </task>
-    <task id="LOCAL-00004" summary="delete idea">
-      <created>1680958276733</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1680958276733</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add Routes">
-      <created>1680962112717</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1680962112717</updated>
-    </task>
-    <task id="LOCAL-00006" summary="done Demo">
-      <created>1681224044446</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1681224044446</updated>
-    </task>
-    <task id="LOCAL-00007" summary="done Error-page">
-      <created>1681226622606</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1681226622606</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Login page">
-      <created>1681314364949</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1681314364949</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Styles">
-      <created>1681321078801</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1681321078801</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Add Link-ButtonDemoLink">
-      <created>1681741937802</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1681741937802</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Add Link-ButtonGoHome">
-      <created>1682619359307</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1682619359307</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add Admin page">
-      <created>1682779301217</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1682779301218</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Add LoginHOC and firebase">
-      <created>1682852860991</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1682852860991</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
-    <MESSAGE value="delete idea" />
-    <MESSAGE value="add Routes" />
-    <MESSAGE value="done Demo" />
-    <MESSAGE value="done Error-page" />
-    <MESSAGE value="Login page" />
-    <MESSAGE value="Styles" />
-    <MESSAGE value="Add Link-ButtonDemoLink" />
-    <MESSAGE value="Add Link-ButtonGoHome" />
-    <MESSAGE value="Add Admin page" />
-    <MESSAGE value="Add LoginHOC and firebase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add LoginHOC and firebase" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
