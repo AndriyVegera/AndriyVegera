@@ -40,7 +40,7 @@ const Edit = ()=> {
 //           generalInfo: giFV
 //       }
 //     )
-cv/:userId
+// cv/:userId
     return(
         <div className={styles.general}>
             {/*{!formValue ? <Loader /> : */}
@@ -55,6 +55,7 @@ cv/:userId
                         <h1>
                             <span className={styles.profile_name_firstName}>
                                 {/*{formValue.name}*/}
+                                Vehera
                             </span>
                             <div>
                                 <input className={styles.input} type="text" placeholder="Surname"/>
