@@ -1,4 +1,4 @@
-import styles from "./Demo.module.scss";
+import styles from './Demo.module.scss'
 export const ResumeInfo = ()=>{
     return(
         <div className={styles.container}>

@@ -1,5 +1,5 @@
 import {useState} from "react";
-import style from './../../pages/Admin/AdminPage/Admin.module.scss'
+import styles from './../../pages/Admin/AdminPage/Admin.module.scss'
 import Edit from "../../pages/Admin/Edit/Edit";
 import {ResumeInfo} from "../../pages/Demo/ResumeInfo";
 const AdminHOC = ()=>{
@@ -9,7 +9,7 @@ const AdminHOC = ()=>{
     }
     return(
         <div>
-            <button className={style.buttonEditSave} onClick={Swap}>{isEditMode?"Save":"Edit"}</button>
+            <button className={styles.buttonEditSave} onClick={Swap}>{isEditMode?"Save":"Edit"}</button>
             {isEditMode?<Edit/>:<ResumeInfo/>}
         </div>
     )

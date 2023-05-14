@@ -9,7 +9,6 @@ const SignUpLoginHOC = ({Component})=>{
      const handleSignIn = async (formValue)=>{
         try {
             const response = await signInWithEmailAndPassword(auth, formValue.email, formValue.password );
-            console.log(response);
             response?.user?.uid && navigate(AppRoutes.ADMIN);
         }
         catch (e){
