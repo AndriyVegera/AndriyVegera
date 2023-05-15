@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import SignUpLoginHOC from "../components/HOC/SignUpLoginHOC";
 import Admin from "../pages/Admin/AdminPage/Admin";
+import {PrivateHOC} from "../components/HOC/RouteHOC";
 
 export const router = createBrowserRouter([
     {
@@ -23,6 +24,6 @@ export const router = createBrowserRouter([
     },
     {
         path:AppRoutes.ADMIN,
-        element:<Admin/>
+        element:<PrivateHOC Component={Admin}/>
     }
 ])

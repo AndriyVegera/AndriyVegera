@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import {AppRoutes} from "../../common/AppRoutes";
 import styles from "../../pages/Demo/Demo.module.scss";
 import "./../../pages/Error/Error.css"
@@ -32,4 +32,11 @@ export const ButtonLogOut = ()=>{
     return(
         <Link to={AppRoutes.MAIN}><div className={styles.login}><button onClick={handleLogOut} className={styles.buttonLogin} type="button">Log Out</button></div></Link>
     )
+}
+export const PrivateHOC=({Component})=>{
+        const authUser = JSON.parse(localStorage.getItem('user'))
+        console.log(authUser?.uid)
+        return authUser?.uid
+            ? <Component/>
+            : <Navigate to={AppRoutes.SIGNUP}/>
 }
