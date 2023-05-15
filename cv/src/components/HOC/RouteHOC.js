@@ -24,6 +24,7 @@ export const ButtonLogOut = ()=>{
         try{
             let user = auth.currentUser;
             await deleteUser(user);
+            localStorage.removeItem("user");
         }
         catch (e){
             console.log(e);
