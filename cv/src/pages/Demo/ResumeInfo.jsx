@@ -14,7 +14,7 @@ export const ResumeInfo = ()=>{
                                 Vehera
                             </span>
                         <span className={styles.profile_name_secondName}>
-                                Andrii
+                                Andrew
                             </span>
                     </h1>
                     <p className={styles.profile_title}>Frontend Developer</p>
