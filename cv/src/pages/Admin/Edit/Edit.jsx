@@ -1,5 +1,7 @@
 import styles from "./Edit.module.scss"
+import {useSelector} from "react-redux";
 const Edit = ()=> {
+    const generalInfo = useSelector((state) => state.user.generalInfo);
     // const data = useSelector()//redux{
     // const [formValue, setFormValue useState///null
 // generalInfo:{
@@ -53,27 +55,24 @@ const Edit = ()=> {
                     </div>
                     <div className={styles.profile_info}>
                         <h1>
-                            <span className={styles.profile_name_firstName}>
-                                {/*{formValue.name}*/}
-                                Vehera
+                             <span className={styles.profile_name_firstName}>
+                                {generalInfo.firstName}
                             </span>
                             <div>
                                 <input className={styles.input} type="text" placeholder="Surname"/>
                             </div>
                             <span className={styles.profile_name_secondName}>
-                                Andrii
+                                {generalInfo.secondName}
                             </span>
                             <div>
                                 <input className={styles.input} type="text" placeholder="Name"/>
                             </div>
                         </h1>
-                        <p className={styles.profile_title}>Frontend Developer</p>
+                        <p className={styles.profile_title}>{generalInfo.profileTitle}</p>
                         <div>
                             <input className={styles.input} type="text" placeholder="Position"/>
                         </div>
-                        <p className={styles.description}>Andriy, 19 years old, ready to learn new things, sociable, stress-resistant, loves new things
-                            acquaintances, I want to become a Junior developer in Frontend development and develop in this direction.
-                        </p>
+                        <p className={styles.description}>{generalInfo.description}</p>
                         <div>
                             <input className={styles.input} type="text" placeholder="Info"/>
                         </div>

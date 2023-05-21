@@ -22,10 +22,12 @@ const mockData = {
             educationText:"Technical College of the National University \"Lviv Polytechnic"
         },
     ],
-    courses: {
+    courses: [
+        {
         coursesYear: "September 2022 - May 2023",
         coursesList: "Frontend developer - Logos"
-    },
+        }
+    ],
     personalData:{
         address:"Village of Vynnychki, Lviv region 81150",
         phoneNumber:"+380631894170",
@@ -45,7 +47,11 @@ const mockData = {
         }
     ]
 }
-const userReducer = (store= mockData)=>{
-    return store;
+const userReducer = (state= mockData, action)=>{
+    switch (action.type){
+        //our update data
+        default:
+            return state;
+    }
 }
 export default userReducer;
