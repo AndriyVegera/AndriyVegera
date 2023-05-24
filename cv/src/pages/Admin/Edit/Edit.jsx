@@ -1,31 +1,20 @@
 import styles from "./Edit.module.scss"
-import {useSelector} from "react-redux";
-import {
-    EditInterestsInput,
-    EditLanguagesInput,
-    EditSkillsInput,
-    EditSocialInput
-} from "../../../components/EditInputs/EditInput";
-import {useState} from "react";
-const Edit = ()=> {
-    const generalInfo = useSelector((state) => state.user.generalInfo);
-    const data = useSelector((state)=>state.user);
-    const [formValue,setFormValue]=useState([]);
+import {EditInput} from "../../../components/EditInputs/EditInput";
+import {useEffect, useState} from "react";
+const Edit = ({data, handleGIEEdit})=> {
+    // const generalInfo = useSelector((state) => state.user.generalInfo);
+    const [skillsFormValue,setSkillsFormValue]=useState([]);
     const [languagesFormValue,setLanguagesFormValue]=useState([]);
     const [interestsFormValue,setInterestsFormValue]=useState([]);
     const [socialFormValue,setSocialFormValue]=useState([]);
-    // const data = useSelector()//redux{
-    // const [formValue, setFormValue useState///null
-// generalInfo:{
-//     name:
-//     fullname://
-// }
+    const [generalInfo, setGeneralInfo] = useState(data.generalInfo);
 
-//     useEffect(()=>{
-// setGeneralFormValue(data.generalInfo)
-// setSkillsFormValue(data.skills)
-// setEducationlFormValue(data.education)
-//     }, [data])
+    useEffect(()=>{
+        setSkillsFormValue(data.skills)
+        setLanguagesFormValue(data.languages)
+        setInterestsFormValue(data.interests)
+        setSocialFormValue(data.socialNetworks)
+    }, [data])
 
     // skills:[
     //   'A', 'B', 'C', ''
@@ -54,6 +43,15 @@ const Edit = ()=> {
 //           generalInfo: giFV
 //       }
 //     )
+    const handleInputChange = (key,value)=>{
+        setGeneralInfo((prevState)=>{
+                return{
+                    ...prevState,
+                    [key]:value
+                }
+            }
+        )
+    }
     return(
         <div className={styles.general}>
             {/*{!formValue ? <Loader /> : */}
@@ -67,37 +65,38 @@ const Edit = ()=> {
                     <div className={styles.profile_info}>
                         <h1>
                              <span className={styles.profile_name_firstName}>
-                                {generalInfo.firstName}
+                                {data.generalInfo.firstName}
                             </span>
                             <div>
-                                <input value={generalInfo.firstName} className={styles.input} type="text" placeholder="Surname"/>
+                                <input value={generalInfo.firstName} className={styles.input} type="text" placeholder="Surname" onChange={(e)=>handleInputChange('firstName', e.target.value)}/>
                             </div>
                             <span className={styles.profile_name_secondName}>
-                                {generalInfo.secondName}
+                                {data.generalInfo.secondName}
                             </span>
                             <div>
                                 <input className={styles.input} type="text" placeholder="Name"/>
                             </div>
                         </h1>
-                        <p className={styles.profile_title}>{generalInfo.profileTitle}</p>
+                        <p className={styles.profile_title}>{data.generalInfo.profileTitle}</p>
                         <div>
                             <input className={styles.input} type="text" placeholder="Position"/>
                         </div>
-                        <p className={styles.description}>{generalInfo.description}</p>
+                        <p className={styles.description}>{data.generalInfo.description}</p>
                         <div>
                             <input className={styles.input} type="text" placeholder="Info"/>
                         </div>
                     </div>
+                    <button className={styles.buttonSaveInfo} type="button" onClick={()=>handleGIEEdit(generalInfo)}>Save Info</button>
                 </div>
                 <div className={styles.group1}>
                     <div className="skills">
                         <h3 className={styles.title}>Skills</h3>
                         <ul className={styles.skills_list}>
-                            {formValue.map((skill, index) => (
+                            {skillsFormValue.map((skill, index) => (
                                 <li key={index}>{skill}</li>
                             ))}
                         </ul>
-                        <EditSkillsInput data={data} formValue={formValue} setFormValue={setFormValue}/>
+                        <EditInput formValue={skillsFormValue} setFormValue={setSkillsFormValue}/>
                     </div>
                     <div className="languages">
                         <h3 className={styles.title}>Languages</h3>
@@ -106,7 +105,7 @@ const Edit = ()=> {
                                 <li key={index}>{languages}</li>
                             ))}
                         </ul>
-                        <EditLanguagesInput data={data} languagesFormValue={languagesFormValue} setLanguagesFormValue={setLanguagesFormValue}/>
+                        <EditInput formValue={languagesFormValue} setFormValue={setLanguagesFormValue}/>
                     </div>
                     <div className="education">
                         <h3 className={styles.title}>Education</h3>
@@ -148,7 +147,7 @@ const Edit = ()=> {
                                 <li key={index}>{interests}</li>
                             ))}
                         </ul>
-                        <EditInterestsInput data={data} interestsFormValue={interestsFormValue} setInterestsFormValue={setInterestsFormValue}/>
+                        <EditInput formValue={interestsFormValue} setFormValue={setInterestsFormValue}/>
                     </div>
                     <div className="social_networks">
                         <h3 className={styles.title}>Social Networks</h3>
@@ -157,7 +156,7 @@ const Edit = ()=> {
                                 <li key={index}><a className={styles.socialNetworks_list} href={social}>{social}</a></li>
                             ))}
                         </ul>
-                        <EditSocialInput data={data} setSocialFormValue={setSocialFormValue} socialFormValue={socialFormValue}/>
+                        <EditInput setFormValue={setSocialFormValue} formValue={socialFormValue}/>
                     </div>
                     <div className="expirience">
                         <h3 className={styles.title}>Experience</h3>
