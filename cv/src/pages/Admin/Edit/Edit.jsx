@@ -1,7 +1,19 @@
 import styles from "./Edit.module.scss"
 import {useSelector} from "react-redux";
+import {
+    EditInterestsInput,
+    EditLanguagesInput,
+    EditSkillsInput,
+    EditSocialInput
+} from "../../../components/EditInputs/EditInput";
+import {useState} from "react";
 const Edit = ()=> {
     const generalInfo = useSelector((state) => state.user.generalInfo);
+    const data = useSelector((state)=>state.user);
+    const [formValue,setFormValue]=useState([]);
+    const [languagesFormValue,setLanguagesFormValue]=useState([]);
+    const [interestsFormValue,setInterestsFormValue]=useState([]);
+    const [socialFormValue,setSocialFormValue]=useState([]);
     // const data = useSelector()//redux{
     // const [formValue, setFormValue useState///null
 // generalInfo:{
@@ -42,7 +54,6 @@ const Edit = ()=> {
 //           generalInfo: giFV
 //       }
 //     )
-// cv/:userId
     return(
         <div className={styles.general}>
             {/*{!formValue ? <Loader /> : */}
@@ -59,7 +70,7 @@ const Edit = ()=> {
                                 {generalInfo.firstName}
                             </span>
                             <div>
-                                <input className={styles.input} type="text" placeholder="Surname"/>
+                                <input value={generalInfo.firstName} className={styles.input} type="text" placeholder="Surname"/>
                             </div>
                             <span className={styles.profile_name_secondName}>
                                 {generalInfo.secondName}
@@ -82,27 +93,20 @@ const Edit = ()=> {
                     <div className="skills">
                         <h3 className={styles.title}>Skills</h3>
                         <ul className={styles.skills_list}>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>React</li>
-                            <li>Git</li>
+                            {formValue.map((skill, index) => (
+                                <li key={index}>{skill}</li>
+                            ))}
                         </ul>
-                        <div>
-                            <input className={styles.input} type="text" placeholder="Skills"/>
-                            <button>Add</button>
-                        </div>
+                        <EditSkillsInput data={data} formValue={formValue} setFormValue={setFormValue}/>
                     </div>
                     <div className="languages">
                         <h3 className={styles.title}>Languages</h3>
                         <ul className={styles.languages_list}>
-                            <li>Ukrainian</li>
-                            <li>English</li>
+                            {languagesFormValue.map((languages, index) => (
+                                <li key={index}>{languages}</li>
+                            ))}
                         </ul>
-                        <div>
-                            <input className={styles.input} type="text" placeholder="Languages"/>
-                            <button>Add</button>
-                        </div>
+                        <EditLanguagesInput data={data} languagesFormValue={languagesFormValue} setLanguagesFormValue={setLanguagesFormValue}/>
                     </div>
                     <div className="education">
                         <h3 className={styles.title}>Education</h3>
@@ -112,7 +116,6 @@ const Edit = ()=> {
                             <p className={styles.education_list_text}>Vinnychky gymnasium of Davydivska village council of Lviv district</p>
                             <input className={styles.input} type="text" placeholder="Education Text"/>
                         </div>
-                        <button>Add</button>
                     </div>
                     <div className="certification">
                         <h3 className={styles.title}>Courses</h3>
@@ -122,7 +125,6 @@ const Edit = ()=> {
                             <p className={styles.courses_list_text}>Frontend developer - Logos</p>
                             <input className={styles.input} type="text" placeholder="Courses Text"/>
                         </div>
-                        <button>Add</button>
                     </div>
                 </div>
                 <div className={styles.group2}>
@@ -138,35 +140,24 @@ const Edit = ()=> {
                             <p className={styles.personalData_email}>vegeraandrij@gmail.com</p>
                             <input className={styles.input} type="text" placeholder="Email Address"/>
                         </div>
-                        <button>Save</button>
                     </div>
                     <div className="interests">
                         <h3 className={styles.title}>Interests</h3>
                         <ul className={styles.interests_list}>
-                            <li>Football</li>
-                            <li>Computer games</li>
-                            <li>Volleyball</li>
+                            {interestsFormValue.map((interests, index) => (
+                                <li key={index}>{interests}</li>
+                            ))}
                         </ul>
-                        <div>
-                            <input className={styles.input} type="text" placeholder="Interest"/>
-                            <button>Add</button>
-                        </div>
+                        <EditInterestsInput data={data} interestsFormValue={interestsFormValue} setInterestsFormValue={setInterestsFormValue}/>
                     </div>
                     <div className="social_networks">
                         <h3 className={styles.title}>Social Networks</h3>
                         <ul className={styles.socialNetworks_list}>
-                            <li>Instagram</li>
-                            <li>Telegram</li>
-                            <li>Steam</li>
-                            <li>Viber</li>
-                            <li>Twitch</li>
-                            <li>Discord</li>
-                            <li>Tiktok</li>
+                            {socialFormValue.map((social, index) => (
+                                <li key={index}><a className={styles.socialNetworks_list} href={social}>{social}</a></li>
+                            ))}
                         </ul>
-                        <div>
-                            <input className={styles.input} type="text" placeholder="Social Network"/>
-                            <button>Add</button>
-                        </div>
+                        <EditSocialInput data={data} setSocialFormValue={setSocialFormValue} socialFormValue={socialFormValue}/>
                     </div>
                     <div className="expirience">
                         <h3 className={styles.title}>Experience</h3>
@@ -176,7 +167,6 @@ const Edit = ()=> {
                             <p className={styles.experience_list_text}>No work experience</p>
                             <input className={styles.input} type="text" placeholder="Experience Text"/>
                         </div>
-                        <button>Add</button>
                     </div>
                 </div>
             </div>

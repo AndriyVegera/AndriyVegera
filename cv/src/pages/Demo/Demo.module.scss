@@ -9,7 +9,7 @@
   padding-bottom: 100px;
 }
 .container{
-  max-width: 1000px;
+  max-width: 1200px;
   width: 90%;
   margin: 0 auto;
   display: grid;
@@ -25,6 +25,7 @@
   grid-column: 1 / -1 ;
   margin-bottom: 2rem;
   margin-top: 0px;
+  margin-left: 30px;
 }
 .profile_name_firstName{
   color: white;
@@ -32,22 +33,24 @@
   font-size: clamp(2rem, 8vw, 3rem);
   text-transform: uppercase;
   display: block;
+  margin-bottom: 10px;
 }
 .profile_name_secondName{
- color: orange;
+  color: orange;
   font-weight: 200;
   font-size: clamp(2.5rem, 15vw, 2rem);
   text-transform: uppercase;
   display: block;
+  margin-bottom: 10px;
 }
 .description{
   margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 500;
   color:gray ;
 }
 .profile_title{
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -61,7 +64,7 @@
 .skills_list{
   margin-top: 1rem;
   margin-left: -0.5rem;
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   font-weight: 400;
   color:gray ;
   line-height: 1.5;
@@ -69,61 +72,63 @@
 .title{
   color: orange;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
 }
 .languages_list{
   margin-top: 1rem;
   margin-left: -0.5rem;
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   font-weight: 400;
   color:gray ;
   line-height: 1.5;
 }
 .education_list_text{
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color:gray ;
   line-height: 1.5;
 }
 .education_list_year{
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color:white ;
   line-height: 1.5;
 }
 .courses_list_text{
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color:gray ;
   line-height: 1.5;
 }
 .courses_list_year{
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color:white ;
   line-height: 1.5;
 }
 .experience_list_text{
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color:gray ;
+  line-height: 1.5;
 }
 .experience_list_year{
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color:white ;
+  line-height: 1.5;
 }
 .interests_list{
   margin-top: 1rem;
   margin-left: -0.5rem;
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   font-weight: 400;
   color:gray ;
   line-height: 1.5;
@@ -131,32 +136,32 @@
 .socialNetworks_list{
   margin-top: 1rem;
   margin-left: -0.5rem;
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   font-weight: 400;
   color:gray ;
   line-height: 1.5;
 }
 .personalData_address{
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color:gray ;
 }
 .personalData_phone{
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color:gray ;
 }
 .personalData_dateOfBrh{
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color:gray ;
 }
 .personalData_email{
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color:gray ;
 }
@@ -164,11 +169,13 @@
   display: flex;
   flex-flow: column;
   gap: 5px;
+  margin-left: 50px;
 }
 .group2{
   display: flex;
   flex-flow: column;
   gap: 5px;
+  margin-left: 100px;
 }
 .signUp{
   margin-left: auto;
