@@ -33,11 +33,19 @@ const AdminHOC = ()=>{
            setData(data[0]);
         })
     }
-    const updateInfo = async (generalInfo)=>{
+    const updateInfo = async (generalInfo,skills,languages,education,courses,personalData,interests,socialNetworks,experience)=>{
         const docRef = doc(db,authUser?.uid, data?.id);
         await setDoc(docRef, {
             ...data,
-            generalInfo
+            generalInfo,
+            skills,
+            languages,
+            education,
+            courses,
+            personalData,
+            interests,
+            socialNetworks,
+            experience
         })
     }
     const Swap = ()=>{

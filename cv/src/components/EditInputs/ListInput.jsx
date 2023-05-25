@@ -1,7 +1,7 @@
 import {useState} from "react";
 import styles from "../../pages/Admin/Edit/Edit.module.scss";
 
-export const EditInput = ({setFormValue,formValue})=>{
+export const ListInput = ({setFormValue,formValue,placeholder})=>{
     const [inputValue, setInputValue] = useState('');
     return(
         <>
@@ -17,7 +17,7 @@ export const EditInput = ({setFormValue,formValue})=>{
                         value={item}
                         className={styles.inputList}
                         type="text"
-                        placeholder="New skill"
+                        placeholder={placeholder}
                          />
                     <button className={styles.buttonDelete} onClick={() => {
                         const updatedItem = [...formValue];
@@ -28,7 +28,7 @@ export const EditInput = ({setFormValue,formValue})=>{
             ))}
         </div>
             <div>
-                <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} className={styles.inputList} type="text" placeholder="New skill"/>
+                <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} className={styles.inputList} type="text" placeholder={placeholder}/>
                 <button className={styles.buttonAdd} onClick={() => {
                     const value = inputValue;
                     const item = [...formValue];

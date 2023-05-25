@@ -1,5 +1,6 @@
 import styles from './Demo.module.scss'
 export const ResumeInfo = ({data})=>{
+    // const data = useSelector((state) => state.user);
     return(
         <div className={styles.container}>
             <div className={styles.profile}>

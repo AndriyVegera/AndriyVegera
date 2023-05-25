@@ -1,14 +1,21 @@
 import styles from "./Edit.module.scss"
-import {EditInput} from "../../../components/EditInputs/EditInput";
+import {ListInput} from "../../../components/EditInputs/ListInput";
 import {useEffect, useState} from "react";
-const Edit = ({data, handleGIEEdit})=> {
-    // const generalInfo = useSelector((state) => state.user.generalInfo);
-    const [skillsFormValue,setSkillsFormValue]=useState([]);
-    const [languagesFormValue,setLanguagesFormValue]=useState([]);
-    const [interestsFormValue,setInterestsFormValue]=useState([]);
-    const [socialFormValue,setSocialFormValue]=useState([]);
+const Edit = ({data, handleGIEEdit, addInfo})=> {
+    // const data = useSelector((state) => state.user);
+    const [skillsFormValue,setSkillsFormValue]=useState(data.skills);
+    const [languagesFormValue,setLanguagesFormValue]=useState(data.languages);
+    const [interestsFormValue,setInterestsFormValue]=useState(data.interests);
+    const [socialFormValue,setSocialFormValue]=useState(data.socialNetworks);
     const [generalInfo, setGeneralInfo] = useState(data.generalInfo);
-
+    const [education, setEducation] = useState(data.education)
+    const [courses,setCourses]= useState(data.courses);
+    const [personalData, setPersonalData]=useState(data.personalData)
+    const [experience,setExperience] = useState(data.experience)
+    // useEffect(()=>
+    // {
+    //     addInfo();
+    // },[])
     useEffect(()=>{
         setSkillsFormValue(data.skills)
         setLanguagesFormValue(data.languages)
@@ -51,6 +58,13 @@ const Edit = ({data, handleGIEEdit})=> {
                 }
             }
         )
+        setPersonalData((prevState)=>{
+                return{
+                    ...prevState,
+                    [key]:value
+                }
+            }
+        )
     }
     return(
         <div className={styles.general}>
@@ -74,19 +88,19 @@ const Edit = ({data, handleGIEEdit})=> {
                                 {data.generalInfo.secondName}
                             </span>
                             <div>
-                                <input className={styles.input} type="text" placeholder="Name"/>
+                                <input value={generalInfo.secondName} className={styles.input} type="text" placeholder="Name" onChange={(e)=>handleInputChange('secondName', e.target.value)}/>
                             </div>
                         </h1>
                         <p className={styles.profile_title}>{data.generalInfo.profileTitle}</p>
                         <div>
-                            <input className={styles.input} type="text" placeholder="Position"/>
+                            <input value={generalInfo.profileTitle} className={styles.input} type="text" placeholder="Profile Title" onChange={(e)=>handleInputChange('profileTitle', e.target.value)}/>
                         </div>
                         <p className={styles.description}>{data.generalInfo.description}</p>
                         <div>
-                            <input className={styles.input} type="text" placeholder="Info"/>
+                            <input value={generalInfo.description} className={styles.input} type="text" placeholder="Description" onChange={(e)=>handleInputChange('description', e.target.value)}/>
                         </div>
                     </div>
-                    <button className={styles.buttonSaveInfo} type="button" onClick={()=>handleGIEEdit(generalInfo)}>Save Info</button>
+                    <button className={styles.buttonSaveInf} type="button" onClick={()=>handleGIEEdit(generalInfo,skillsFormValue,languagesFormValue,education,courses,personalData,interestsFormValue,socialFormValue,experience)}>Save Info</button>
                 </div>
                 <div className={styles.group1}>
                     <div className="skills">
@@ -96,7 +110,7 @@ const Edit = ({data, handleGIEEdit})=> {
                                 <li key={index}>{skill}</li>
                             ))}
                         </ul>
-                        <EditInput formValue={skillsFormValue} setFormValue={setSkillsFormValue}/>
+                        <ListInput formValue={skillsFormValue} setFormValue={setSkillsFormValue} placeholder="New Skill"/>
                     </div>
                     <div className="languages">
                         <h3 className={styles.title}>Languages</h3>
@@ -105,24 +119,48 @@ const Edit = ({data, handleGIEEdit})=> {
                                 <li key={index}>{languages}</li>
                             ))}
                         </ul>
-                        <EditInput formValue={languagesFormValue} setFormValue={setLanguagesFormValue}/>
+                        <ListInput formValue={languagesFormValue} setFormValue={setLanguagesFormValue} placeholder="New Languages"/>
                     </div>
                     <div className="education">
                         <h3 className={styles.title}>Education</h3>
                         <div className="education_list">
-                            <p className={styles.education_list_year}> September 2009 - May 2018</p>
-                            <input className={styles.input} type="text" placeholder="Education Year"/>
-                            <p className={styles.education_list_text}>Vinnychky gymnasium of Davydivska village council of Lviv district</p>
-                            <input className={styles.input} type="text" placeholder="Education Text"/>
+                            {data.education.map((item, index) => (
+                                <div key={index}>
+                                    <p className={styles.education_list_year}>{item.educationYear}</p>
+                                    <input value={education[index].educationYear} className={styles.input} type="text" placeholder="Education Year"                         onChange={(e) => {
+                                        const updatedSkills = [...education];
+                                        updatedSkills[index] = e.target.value;
+                                        setEducation(updatedSkills);
+                                    }}/>
+                                    <p className={styles.education_list_text}>{item.educationText}</p>
+                                    <input value={education[index].educationText} className={styles.input} type="text" placeholder="Education Text"                         onChange={(e) => {
+                                        const updatedSkills = [...education];
+                                        updatedSkills[index] = e.target.value;
+                                        setEducation(updatedSkills);
+                                    }}/>
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className="certification">
                         <h3 className={styles.title}>Courses</h3>
                         <div className="courses_list">
-                            <p className={styles.courses_list_year}>September 2022 - May 2023</p>
-                            <input className={styles.input} type="text" placeholder="Courses Year"/>
-                            <p className={styles.courses_list_text}>Frontend developer - Logos</p>
-                            <input className={styles.input} type="text" placeholder="Courses Text"/>
+                            {data.courses.map((item, index) => (
+                                <div key={index}>
+                                    <p className={styles.courses_list_year}>{item.coursesYear}</p>
+                                    <input value={courses[index].coursesYear} className={styles.input} type="text" placeholder="Courses Year"                         onChange={(e) => {
+                                        const updatedSkills = [...courses];
+                                        updatedSkills[index] = e.target.value;
+                                        setCourses(updatedSkills);
+                                    }}/>
+                                    <p className={styles.courses_list_text}>{item.coursesList}</p>
+                                    <input value={courses[index].coursesList} className={styles.input} type="text" placeholder="Courses Text"                         onChange={(e) => {
+                                        const updatedSkills = [...courses];
+                                        updatedSkills[index] = e.target.value;
+                                        setCourses(updatedSkills);
+                                    }}/>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -130,14 +168,14 @@ const Edit = ({data, handleGIEEdit})=> {
                     <div className="personalData">
                         <h3 className={styles.title}>Personal data</h3>
                         <div className="personalData_list">
-                            <p className={styles.personalData_address}>Village of Vynnychki, Lviv region 81150</p>
-                            <input className={styles.input} type="text" placeholder="Address"/>
-                            <p className={styles.personalData_phone}>+380631894170</p>
-                            <input className={styles.input} type="text" placeholder="Phone number"/>
-                            <p className={styles.personalData_dateOfBrh}>07-12-2003</p>
-                            <input className={styles.input} type="text" placeholder="Date of Birthday"/>
-                            <p className={styles.personalData_email}>vegeraandrij@gmail.com</p>
-                            <input className={styles.input} type="text" placeholder="Email Address"/>
+                            <p className={styles.personalData_address}>{data.personalData.address}</p>
+                            <input value={personalData.address} className={styles.input} type="text" placeholder="Address" onChange={(e)=>handleInputChange('address', e.target.value)}/>
+                            <p className={styles.personalData_phone}>{data.personalData.phoneNumber}</p>
+                            <input value={personalData.phoneNumber} className={styles.input} type="text" placeholder="Phone number" onChange={(e)=>handleInputChange('phoneNumber', e.target.value)}/>
+                            <p className={styles.personalData_dateOfBrh}>{data.personalData.dateOfBrh}</p>
+                            <input value={personalData.dateOfBrh} className={styles.input} type="text" placeholder="Date of Birhday" onChange={(e)=>handleInputChange('dateOfBrh', e.target.value)}/>
+                            <p className={styles.personalData_email}>{data.personalData.email}</p>
+                            <input value={personalData.email} className={styles.input} type="text" placeholder="Email Address" onChange={(e)=>handleInputChange('email', e.target.value)}/>
                         </div>
                     </div>
                     <div className="interests">
@@ -147,24 +185,36 @@ const Edit = ({data, handleGIEEdit})=> {
                                 <li key={index}>{interests}</li>
                             ))}
                         </ul>
-                        <EditInput formValue={interestsFormValue} setFormValue={setInterestsFormValue}/>
+                        <ListInput formValue={interestsFormValue} setFormValue={setInterestsFormValue} placeholder="New interest"/>
                     </div>
                     <div className="social_networks">
                         <h3 className={styles.title}>Social Networks</h3>
                         <ul className={styles.socialNetworks_list}>
                             {socialFormValue.map((social, index) => (
-                                <li key={index}><a className={styles.socialNetworks_list} href={social}>{social}</a></li>
+                                <li key={index}>{social}</li>
                             ))}
                         </ul>
-                        <EditInput setFormValue={setSocialFormValue} formValue={socialFormValue}/>
+                        <ListInput setFormValue={setSocialFormValue} formValue={socialFormValue} placeholder="New social"/>
                     </div>
                     <div className="expirience">
                         <h3 className={styles.title}>Experience</h3>
                         <div className="experience_list">
-                            <p className={styles.experience_list_year}>April 2023</p>
-                            <input className={styles.input} type="text" placeholder="Experience Year"/>
-                            <p className={styles.experience_list_text}>No work experience</p>
-                            <input className={styles.input} type="text" placeholder="Experience Text"/>
+                            {data.experience.map((item, index) => (
+                                <div key={index}>
+                                    <p className={styles.courses_list_year}>{item.experienceYear}</p>
+                                    <input value={experience[index].experienceYear} className={styles.input} type="text" placeholder="Experience Year"                         onChange={(e) => {
+                                        const updatedSkills = [...experience];
+                                        updatedSkills[index] = e.target.value;
+                                        setExperience(updatedSkills);
+                                    }}/>
+                                    <p className={styles.courses_list_text}>{item.experienceText}</p>
+                                    <input value={experience[index].experienceText} className={styles.input} type="text" placeholder="Experience"                         onChange={(e) => {
+                                        const updatedSkills = [...experience];
+                                        updatedSkills[index] = e.target.value;
+                                        setExperience(updatedSkills);
+                                    }}/>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
