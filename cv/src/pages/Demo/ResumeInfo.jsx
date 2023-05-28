@@ -1,6 +1,7 @@
 import styles from './Demo.module.scss'
+import {useSelector} from "react-redux";
 export const ResumeInfo = ({data})=>{
-    // const data = useSelector((state) => state.user);
+    const mockData = useSelector((state) => state.user);
     return(
         <div className={styles.container}>
             <div className={styles.profile}>
@@ -12,53 +13,69 @@ export const ResumeInfo = ({data})=>{
                 <div className={styles.profile_info}>
                     <h1>
                             <span className={styles.profile_name_firstName}>
-                                {data.generalInfo.firstName}
+                                {data?data.generalInfo.firstName:mockData.generalInfo.firstName}
                             </span>
                             <span className={styles.profile_name_secondName}>
-                                {data.generalInfo.secondName}
+                                {data?data.generalInfo.secondName:mockData.generalInfo.secondName}
                             </span>
                     </h1>
-                    <p className={styles.profile_title}>{data.generalInfo.profileTitle}</p>
-                    <p className={styles.description}>{data.generalInfo.description}</p>
+                    <p className={styles.profile_title}>{data?data.generalInfo.profileTitle:mockData.generalInfo.profileTitle}</p>
+                    <p className={styles.description}>{data?data.generalInfo.description:mockData.generalInfo.description}</p>
                 </div>
             </div>
             <div className={styles.group1}>
                 <div className="skills">
                     <h3 className={styles.title}>Skills</h3>
                     <ul className={styles.skills_list}>
-                        {data.skills.map((skill, index) => (
-                            <li key={index}>{skill}</li>
-                        ))}
+                        {data
+                            ? data.skills.map((skill, index) => <li key={index}>{skill}</li>)
+                            : mockData.skills.map((skill, index) => <li key={index}>{skill}</li>)}
                     </ul>
                 </div>
                 <div className="languages">
                     <h3 className={styles.title}>Languages</h3>
                     <ul className={styles.languages_list}>
-                        {data.languages.map((languages, index) => (
-                            <li key={index}>{languages}</li>
-                        ))}
+                        {data
+                            ? data.languages.map((languages, index) => <li key={index}>{languages}</li>)
+                            : mockData.languages.map((languages, index) => <li key={index}>{languages}</li>)}
                     </ul>
                 </div>
                 <div className="education">
                     <h3 className={styles.title}>Education</h3>
                     <div className="education_list">
-                        {data.education.map((item, index) => (
+                        {data?
+                            data.education.map((item, index) => (
                             <div key={index}>
                                 <p className={styles.education_list_year}>{item.educationYear}</p>
                                 <p className={styles.education_list_text}>{item.educationText}</p>
                             </div>
-                        ))}
+                        )):
+                            mockData.education.map((item, index) => (
+                                <div key={index}>
+                                    <p className={styles.education_list_year}>{item.educationYear}</p>
+                                    <p className={styles.education_list_text}>{item.educationText}</p>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
                 <div className="certification">
                     <h3 className={styles.title}>Courses</h3>
                     <div className="courses_list">
-                        {data.courses.map((item, index) => (
-                            <div key={index}>
-                                <p className={styles.courses_list_year}>{item.coursesYear}</p>
-                                <p className={styles.courses_list_text}>{item.coursesList}</p>
-                            </div>
-                        ))}
+                        {data?
+                            data.courses.map((item, index) => (
+                                <div key={index}>
+                                    <p className={styles.courses_list_year}>{item.coursesYear}</p>
+                                    <p className={styles.courses_list_text}>{item.coursesList}</p>
+                                </div>
+                            )):
+                            mockData.courses.map((item, index) => (
+                                <div key={index}>
+                                    <p className={styles.courses_list_year}>{item.coursesYear}</p>
+                                    <p className={styles.courses_list_text}>{item.coursesList}</p>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
@@ -66,37 +83,48 @@ export const ResumeInfo = ({data})=>{
                 <div className="personalData">
                     <h3 className={styles.title}>Personal data</h3>
                     <div className="personalData_list">
-                        <p className={styles.personalData_address}>{data.personalData.address}</p>
-                        <p className={styles.personalData_phone}>{data.personalData.phoneNumber}</p>
-                        <p className={styles.personalData_dateOfBrh}>{data.personalData.dateOfBrh}</p>
-                        <p className={styles.personalData_email}>{data.personalData.email}</p>
+                        <p className={styles.personalData_address}>{data?data.personalData.address:mockData.personalData.address}</p>
+                        <p className={styles.personalData_phone}>{data?data.personalData.phoneNumber:mockData.personalData.phoneNumber}</p>
+                        <p className={styles.personalData_dateOfBrh}>{data?data.personalData.dateOfBrh:mockData.personalData.dateOfBrh}</p>
+                        <p className={styles.personalData_email}>{data?data.personalData.email:mockData.personalData.email}</p>
                     </div>
                 </div>
                 <div className="interests">
                     <h3 className={styles.title}>Interests</h3>
                     <ul className={styles.interests_list}>
-                        {data.interests.map((interests, index) => (
-                            <li key={index}>{interests}</li>
-                        ))}
+                        {data
+                            ? data.interests.map((interests, index) => <li key={index}>{interests}</li>)
+                            : mockData.interests.map((interests, index) => <li key={index}>{interests}</li>)
+                        }
                     </ul>
                 </div>
                 <div className="social_networks">
                     <h3 className={styles.title}>Social Networks</h3>
                     <ul className={styles.socialNetworks_list}>
-                        {data.socialNetworks.map((socialNetworks, index) => (
-                            <li key={index}>{socialNetworks}</li>
-                        ))}
+                        {data
+                            ? data.socialNetworks.map((socialNetworks, index) => <li key={index}>{socialNetworks}</li>)
+                            : mockData.socialNetworks.map((socialNetworks, index) => <li key={index}>{socialNetworks}</li>)
+                        }
                     </ul>
                 </div>
                 <div className="expirience">
                     <h3 className={styles.title}>Experience</h3>
                     <div className="experience_list">
-                        {data.experience.map((item, index) => (
-                            <div key={index}>
-                                <p className={styles.experience_list_year}>{item.experienceYear}</p>
-                                <p className={styles.experience_list_text}>{item.experienceText}</p>
-                            </div>
-                        ))}
+                        {data
+                            ?data.experience.map((item, index) => (
+                                <div key={index}>
+                                    <p className={styles.experience_list_year}>{item.experienceYear}</p>
+                                    <p className={styles.experience_list_text}>{item.experienceText}</p>
+                                </div>
+                            )):
+                            mockData.experience.map((item, index) => (
+                                <div key={index}>
+                                    <p className={styles.experience_list_year}>{item.experienceYear}</p>
+                                    <p className={styles.experience_list_text}>{item.experienceText}</p>
+                                </div>
+                            ))
+                        }
+                        {data?console.log(1):console.log(2)}
                     </div>
                 </div>
             </div>
