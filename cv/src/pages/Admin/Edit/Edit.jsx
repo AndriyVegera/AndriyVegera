@@ -1,7 +1,16 @@
 import styles from "./Edit.module.scss"
 import {ListInput} from "../../../components/EditInputs/ListInput";
 import {useEffect, useState} from "react";
-const Edit = ({data, handleGIEEdit, addInfo})=> {
+import {Loader, Uploader} from "rsuite";
+import AvatarIcon from '@rsuite/icons/legacy/Avatar';
+function previewFile(file, callback) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+        callback(reader.result);
+    };
+    reader.readAsDataURL(file);
+}
+const Edit = ({data, handleGIEEdit, addInfo,setFileInfo, uploading, fileInfo,handleFileUpload})=> {
     // const data = useSelector((state) => state.user);
     const [skillsFormValue,setSkillsFormValue]=useState(data.skills);
     const [languagesFormValue,setLanguagesFormValue]=useState(data.languages);
@@ -68,12 +77,35 @@ const Edit = ({data, handleGIEEdit, addInfo})=> {
     }
     return(
         <div className={styles.general}>
-            {/*{!formValue ? <Loader /> : */}
             <div className={styles.container}>
                 <div className={styles.profile}>
                     <div>
                         <div>
-                            <img className={styles.img} src="https://st4.depositphotos.com/4678277/28917/i/600/depositphotos_289173464-stock-photo-close-up-photo-amazing-he.jpg" alt="sad"/>
+                            <Uploader
+                                fileListVisible={false}
+                                listType="picture"
+                                action=""
+                                multiple={false}
+                                autoUpload={false}
+                                onChange={async (fileList)=>{
+                                    console.log(fileList)
+                                    previewFile(fileList[fileList.length-1].blobFile, value => {
+                                        setFileInfo(value);
+                                    });
+                                    handleFileUpload(fileList[fileList.length-1].blobFile)
+                                }}
+                            >
+                                <button style={{ width: 250, height: 300 }}>
+                                    {uploading && <Loader backdrop center />}
+                                    {generalInfo?.imageUrl && !fileInfo ? (
+                                        <img src={generalInfo?.imageUrl  } width="100%" height="100%" alt="img" />
+                                    ) : fileInfo ? (
+                                        <img src={fileInfo} width="100%" height="100%" alt="img"/>
+                                    ) : (
+                                        <AvatarIcon style={{ fontSize: 80 }} />
+                                    )}
+                                </button>
+                            </Uploader>
                         </div>
                     </div>
                     <div className={styles.profile_info}>

@@ -4,7 +4,9 @@ const mockData = {
         secondName:"Andrew",
         profileTitle:"Frontend Developer",
         description:"Andriy, 19 years old, ready to learn new things, sociable, stress-resistant, loves new things\n" +
-            "                        acquaintances, I want to become a Junior developer in Frontend development and develop in this direction."
+            "                        acquaintances, I want to become a Junior developer in Frontend development and develop in this direction.",
+        imageUrl: "",
+        imageName: ""
     },
     skills:[
         "HTML","CSS","JavaScript","React","Git"

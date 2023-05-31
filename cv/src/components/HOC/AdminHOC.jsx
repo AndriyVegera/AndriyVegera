@@ -3,9 +3,14 @@ import styles from './../../pages/Admin/AdminPage/Admin.module.scss'
 import Edit from "../../pages/Admin/Edit/Edit";
 import {ResumeInfo} from "../../pages/Demo/ResumeInfo";
 import {collection, addDoc, onSnapshot, doc, setDoc} from 'firebase/firestore'
-import {db} from "../../firebase/firebase";
+import {ref, uploadBytesResumable, getDownloadURL, deleteObject} from "firebase/storage";
+import {db, storage} from "../../firebase/firebase";
 import {useSelector} from "react-redux";
 const AdminHOC = ()=>{
+    const [uploading, setUploading] = useState(false);
+    const [fileInfo, setFileInfo] = useState(null);
+    const [previousImageName, setPreviousImageName] = useState('');
+    const [newImage, setNewImage] = useState('');
     const [isEditMode,setIsEditMode] = useState(false);
     const authUser = JSON.parse(localStorage.getItem('user'));
     const mockData = useSelector((state)=>state.user);
@@ -25,7 +30,6 @@ const AdminHOC = ()=>{
         }catch (e){
 
         }
-
     }
     const getInfo = ()=>{
         onSnapshot(collectionRef, (snapshot)=>{
@@ -37,7 +41,10 @@ const AdminHOC = ()=>{
         const docRef = doc(db,authUser?.uid, data?.id);
         await setDoc(docRef, {
             ...data,
-            generalInfo,
+            generalInfo:{
+                ...generalInfo,
+                ...newImage
+            },
             skills,
             languages,
             education,
@@ -47,6 +54,45 @@ const AdminHOC = ()=>{
             socialNetworks,
             experience
         })
+        previousImageName && deleteImageFromStorage();
+        setIsEditMode(false)
+    }
+    const deleteImageFromStorage = (imageName = previousImageName) => {
+        console.log(imageName)
+        const storageRef = ref(storage, `/${authUser?.uid}/${imageName}`)
+        deleteObject(storageRef)
+            .then(() => {
+                setPreviousImageName('')
+                setNewImage({})
+            })
+            .catch((e) => console.log("File delete Error"))
+    }
+    const handleFileUpload = async (file)=>{
+        setUploading(true);
+        const storageRef = ref(storage, `/${authUser?.uid}/${file.name}`)
+        const uploadData = uploadBytesResumable(storageRef, file)
+
+        uploadData.on(
+            'state_changed',
+            (snapshot) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            },
+            (error) => {
+                setUploading(false);
+                setFileInfo('')
+            },
+            () => {
+                getDownloadURL(uploadData.snapshot.ref)
+                    .then(url => {
+                        setUploading(false);
+                        setPreviousImageName(data?.generalInfo?.imageName)
+                        setNewImage({
+                            imageUrl: url,
+                            imageName: file.name,
+                        })
+                    })
+            }
+        )
     }
     const Swap = ()=>{
         setIsEditMode(((prevState)=>!prevState));
@@ -55,7 +101,7 @@ const AdminHOC = ()=>{
         <div>
             <button className={styles.buttonEditSave} onClick={Swap}>{isEditMode?"Save":"Edit"}</button>
             {isEditMode&&data?
-                <Edit addInfo={addInfo} data={data} handleGIEEdit={updateInfo}/>
+                <Edit addInfo={addInfo} data={data} handleGIEEdit={updateInfo} setFileInfo={setFileInfo} fileInfo={fileInfo} handleFileUpload={handleFileUpload} uploading={uploading}/>
                 :isLoading?
                     <h1>Loading</h1>
                     :data?

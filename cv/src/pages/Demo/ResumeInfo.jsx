@@ -7,7 +7,15 @@ export const ResumeInfo = ({data})=>{
             <div className={styles.profile}>
                 <div>
                     <div>
-                        <img className={styles.img} src="https://st4.depositphotos.com/4678277/28917/i/600/depositphotos_289173464-stock-photo-close-up-photo-amazing-he.jpg" alt="sad"/>
+                        {data?
+                            data?.generalInfo?.imageUrl &&
+                            <img
+                                src={data?.generalInfo?.imageUrl}
+                                alt="img"
+                                className={styles.img}
+                            />:
+                            <img className={styles.img} src="https://st4.depositphotos.com/4678277/28917/i/600/depositphotos_289173464-stock-photo-close-up-photo-amazing-he.jpg" alt="img"/>
+                        }
                     </div>
                 </div>
                 <div className={styles.profile_info}>
