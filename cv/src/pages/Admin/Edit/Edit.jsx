@@ -11,6 +11,7 @@ function previewFile(file, callback) {
     reader.readAsDataURL(file);
 }
 const Edit = ({data, handleGIEEdit, addInfo,setFileInfo, uploading, fileInfo,handleFileUpload})=> {
+    const [initialized, setInitialized] = useState(false);
     // const data = useSelector((state) => state.user);
     const [skillsFormValue,setSkillsFormValue]=useState(data.skills);
     const [languagesFormValue,setLanguagesFormValue]=useState(data.languages);
@@ -21,10 +22,12 @@ const Edit = ({data, handleGIEEdit, addInfo,setFileInfo, uploading, fileInfo,han
     const [courses,setCourses]= useState(data.courses);
     const [personalData, setPersonalData]=useState(data.personalData)
     const [experience,setExperience] = useState(data.experience)
-    // useEffect(()=>
-    // {
-    //     addInfo();
-    // },[])
+    useEffect(() => {
+        if (!initialized) {
+            addInfo();
+            setInitialized(true);
+        }
+    }, [initialized]);
     useEffect(()=>{
         setSkillsFormValue(data.skills)
         setLanguagesFormValue(data.languages)
@@ -88,7 +91,6 @@ const Edit = ({data, handleGIEEdit, addInfo,setFileInfo, uploading, fileInfo,han
                                 multiple={false}
                                 autoUpload={false}
                                 onChange={async (fileList)=>{
-                                    console.log(fileList)
                                     previewFile(fileList[fileList.length-1].blobFile, value => {
                                         setFileInfo(value);
                                     });
@@ -129,7 +131,7 @@ const Edit = ({data, handleGIEEdit, addInfo,setFileInfo, uploading, fileInfo,han
                         </div>
                         <p className={styles.description}>{data.generalInfo.description}</p>
                         <div>
-                            <input value={generalInfo.description} className={styles.input} type="text" placeholder="Description" onChange={(e)=>handleInputChange('description', e.target.value)}/>
+                            <input value={generalInfo.description} className={styles.inputDesc} type="text" placeholder="Description" onChange={(e)=>handleInputChange('description', e.target.value)}/>
                         </div>
                     </div>
                     <button className={styles.buttonSaveInf} type="button" onClick={()=>handleGIEEdit(generalInfo,skillsFormValue,languagesFormValue,education,courses,personalData,interestsFormValue,socialFormValue,experience)}>Save Info</button>
@@ -156,41 +158,66 @@ const Edit = ({data, handleGIEEdit, addInfo,setFileInfo, uploading, fileInfo,han
                     <div className="education">
                         <h3 className={styles.title}>Education</h3>
                         <div className="education_list">
-                            {data.education.map((item, index) => (
+                            {education.map((item, index) => (
                                 <div key={index}>
                                     <p className={styles.education_list_year}>{item.educationYear}</p>
-                                    <input value={education[index].educationYear} className={styles.input} type="text" placeholder="Education Year"                         onChange={(e) => {
-                                        const updatedSkills = [...education];
-                                        updatedSkills[index] = e.target.value;
-                                        setEducation(updatedSkills);
-                                    }}/>
+                                    <input
+                                        value={item.educationYear}
+                                        className={styles.input}
+                                        type="text"
+                                        placeholder="Education Year"
+                                        onChange={(e) => {
+                                            const updatedEducation = [...education];
+                                            updatedEducation[index].educationYear = e.target.value;
+                                            setEducation(updatedEducation);
+                                        }}
+                                    />
                                     <p className={styles.education_list_text}>{item.educationText}</p>
-                                    <input value={education[index].educationText} className={styles.input} type="text" placeholder="Education Text"                         onChange={(e) => {
-                                        const updatedSkills = [...education];
-                                        updatedSkills[index] = e.target.value;
-                                        setEducation(updatedSkills);
-                                    }}/>
+                                    <input
+                                        value={item.educationText}
+                                        className={styles.input}
+                                        type="text"
+                                        placeholder="Education Text"
+                                        onChange={(e) => {
+                                            const updatedEducation = [...education];
+                                            updatedEducation[index].educationText = e.target.value;
+                                            setEducation(updatedEducation);
+                                        }}
+                                    />
                                 </div>
                             ))}
+
                         </div>
                     </div>
                     <div className="certification">
                         <h3 className={styles.title}>Courses</h3>
                         <div className="courses_list">
-                            {data.courses.map((item, index) => (
+                            {courses.map((item, index) => (
                                 <div key={index}>
                                     <p className={styles.courses_list_year}>{item.coursesYear}</p>
-                                    <input value={courses[index].coursesYear} className={styles.input} type="text" placeholder="Courses Year"                         onChange={(e) => {
-                                        const updatedSkills = [...courses];
-                                        updatedSkills[index] = e.target.value;
-                                        setCourses(updatedSkills);
-                                    }}/>
+                                    <input
+                                        value={item.coursesYear}
+                                        className={styles.input}
+                                        type="text"
+                                        placeholder="Courses Year"
+                                        onChange={(e) => {
+                                            const updatedCourses = [...courses];
+                                            updatedCourses[index].coursesYear = e.target.value;
+                                            setCourses(updatedCourses);
+                                        }}
+                                    />
                                     <p className={styles.courses_list_text}>{item.coursesList}</p>
-                                    <input value={courses[index].coursesList} className={styles.input} type="text" placeholder="Courses Text"                         onChange={(e) => {
-                                        const updatedSkills = [...courses];
-                                        updatedSkills[index] = e.target.value;
-                                        setCourses(updatedSkills);
-                                    }}/>
+                                    <input
+                                        value={item.coursesList}
+                                        className={styles.input}
+                                        type="text"
+                                        placeholder="Courses Text"
+                                        onChange={(e) => {
+                                            const updatedCourses = [...courses];
+                                            updatedCourses[index].coursesList = e.target.value;
+                                            setCourses(updatedCourses);
+                                        }}
+                                    />
                                 </div>
                             ))}
                         </div>
@@ -231,20 +258,32 @@ const Edit = ({data, handleGIEEdit, addInfo,setFileInfo, uploading, fileInfo,han
                     <div className="expirience">
                         <h3 className={styles.title}>Experience</h3>
                         <div className="experience_list">
-                            {data.experience.map((item, index) => (
+                            {experience.map((item, index) => (
                                 <div key={index}>
                                     <p className={styles.courses_list_year}>{item.experienceYear}</p>
-                                    <input value={experience[index].experienceYear} className={styles.input} type="text" placeholder="Experience Year"                         onChange={(e) => {
-                                        const updatedSkills = [...experience];
-                                        updatedSkills[index] = e.target.value;
-                                        setExperience(updatedSkills);
-                                    }}/>
+                                    <input
+                                        value={item.experienceYear}
+                                        className={styles.input}
+                                        type="text"
+                                        placeholder="Experience Year"
+                                        onChange={(e) => {
+                                            const updatedExperience = [...experience];
+                                            updatedExperience[index].experienceYear = e.target.value;
+                                            setExperience(updatedExperience);
+                                        }}
+                                    />
                                     <p className={styles.courses_list_text}>{item.experienceText}</p>
-                                    <input value={experience[index].experienceText} className={styles.input} type="text" placeholder="Experience"                         onChange={(e) => {
-                                        const updatedSkills = [...experience];
-                                        updatedSkills[index] = e.target.value;
-                                        setExperience(updatedSkills);
-                                    }}/>
+                                    <input
+                                        value={item.experienceText}
+                                        className={styles.input}
+                                        type="text"
+                                        placeholder="Experience"
+                                        onChange={(e) => {
+                                            const updatedExperience = [...experience];
+                                            updatedExperience[index].experienceText = e.target.value;
+                                            setExperience(updatedExperience);
+                                        }}
+                                    />
                                 </div>
                             ))}
                         </div>

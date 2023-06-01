@@ -1,4 +1,4 @@
-import styles from './Demo.module.scss'
+import styles from "./Demo.module.scss"
 import {useSelector} from "react-redux";
 export const ResumeInfo = ({data})=>{
     const mockData = useSelector((state) => state.user);
@@ -132,7 +132,6 @@ export const ResumeInfo = ({data})=>{
                                 </div>
                             ))
                         }
-                        {data?console.log(1):console.log(2)}
                     </div>
                 </div>
             </div>

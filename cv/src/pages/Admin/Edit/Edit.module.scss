@@ -85,28 +85,28 @@
   margin-top: 1rem;
   font-size: 1.8rem;
   font-weight: 400;
-  color:white ;
+  color:gray ;
   line-height: 1.5;
 }
 .education_list_year{
   margin-top: 1rem;
   font-size: 1.8rem;
   font-weight: 400;
-  color:white ;
+  color:gray ;
   line-height: 1.5;
 }
 .courses_list_text{
   margin-top: 1rem;
   font-size: 1.8rem;
   font-weight: 400;
-  color:white ;
+  color:gray ;
   line-height: 1.5;
 }
 .courses_list_year{
   margin-top: 1rem;
   font-size: 1.8rem;
   font-weight: 400;
-  color:white ;
+  color:gray ;
   line-height: 1.5;
 }
 .experience_list_text{
@@ -143,25 +143,25 @@
   margin-top: 1rem;
   font-size: 1.8rem;
   font-weight: 400;
-  color:white ;
+  color:gray ;
 }
 .personalData_phone{
   margin-top: 1rem;
   font-size: 1.8rem;
   font-weight: 400;
-  color:white ;
+  color:gray ;
 }
 .personalData_dateOfBrh{
   margin-top: 1rem;
   font-size: 1.8rem;
   font-weight: 400;
-  color:white ;
+  color:gray ;
 }
 .personalData_email{
   margin-top: 1rem;
   font-size: 1.8rem;
   font-weight: 400;
-  color:white ;
+  color:gray ;
 }
 .group1{
   display: flex;
@@ -177,6 +177,17 @@
 }
 .inputList{
   width: 300px;
+  height: 40px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  font-size: 30px;
+  background: transparent;
+  outline: none;
+  color: white;
+}
+.inputDesc{
+  width: 700px;
   height: 40px;
   margin-bottom: 20px;
   border: none;

@@ -23,6 +23,7 @@ export const ButtonLogOut = ()=>{
     const handleLogOut = async ()=>{
         try{
             let user = auth.currentUser;
+            console.log(auth.currentUser)
             await deleteUser(user);
             localStorage.removeItem("user");
         }
@@ -36,7 +37,6 @@ export const ButtonLogOut = ()=>{
 }
 export const PrivateHOC=({Component})=>{
         const authUser = JSON.parse(localStorage.getItem('user'))
-        console.log(authUser?.uid)
         return authUser?.uid
             ? <Component/>
             : <Navigate to={AppRoutes.SIGNUP}/>
