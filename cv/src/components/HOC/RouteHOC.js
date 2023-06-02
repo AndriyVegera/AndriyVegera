@@ -19,13 +19,13 @@ export const ButtonGoHome = ()=>{
         <Link to={AppRoutes.MAIN}><button className="link_404" type="button">Go to Home</button></Link>
     )
 }
-export const ButtonLogOut = ()=>{
+export const ButtonLogOut = ({initialized,setInitialized})=>{
     const handleLogOut = async ()=>{
         try{
-            let user = auth.currentUser;
-            console.log(auth.currentUser)
-            await deleteUser(user);
             localStorage.removeItem("user");
+            let user = auth.currentUser;
+            await deleteUser(user);
+            setInitialized(false);
         }
         catch (e){
             console.log(e);

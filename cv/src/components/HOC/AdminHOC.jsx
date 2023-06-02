@@ -2,11 +2,11 @@ import {useEffect, useState} from "react";
 import styles from './../../pages/Admin/AdminPage/Admin.module.scss'
 import Edit from "../../pages/Admin/Edit/Edit";
 import {ResumeInfo} from "../../pages/Demo/ResumeInfo";
-import {collection, addDoc, onSnapshot, doc, setDoc} from 'firebase/firestore'
+import {collection, addDoc, onSnapshot, doc, setDoc,deleteDoc} from 'firebase/firestore'
 import {ref, uploadBytesResumable, getDownloadURL, deleteObject} from "firebase/storage";
 import {db, storage} from "../../firebase/firebase";
 import {useSelector} from "react-redux";
-const AdminHOC = ()=>{
+const AdminHOC = ({initialized,setInitialized})=>{
     const [uploading, setUploading] = useState(false);
     const [fileInfo, setFileInfo] = useState(null);
     const [previousImageName, setPreviousImageName] = useState('');
@@ -17,20 +17,24 @@ const AdminHOC = ()=>{
     const [data, setData] = useState();
     const [isLoading,setIsLoading]=useState(true);
     const collectionRef = collection(db, authUser?.uid);
+    const addInfo = async ()=>{
+        try {
+            const docRef = await addDoc(collectionRef, mockData);
+            docRef?.id && alert('We have received the data');
+        }catch (e){
+
+        }
+    }
     useEffect(()=>{
+        if (!initialized) {
+            setInitialized(true);
+            addInfo();
+        }
         getInfo();
     },[])
     useEffect(()=> {
         data && setIsLoading(false);
     },[data])
-    const addInfo = async ()=>{
-        try {
-            const docRef = await addDoc(collectionRef, mockData);
-            docRef?.id && alert('good');
-        }catch (e){
-
-        }
-    }
     const getInfo = ()=>{
         onSnapshot(collectionRef, (snapshot)=>{
            const data = snapshot.docs.map((doc)=>({...doc.data(),id:doc.id}));
@@ -57,8 +61,12 @@ const AdminHOC = ()=>{
         previousImageName && deleteImageFromStorage();
         setIsEditMode(false)
     }
+    const deleteInfo = async () => {
+        const docRef = doc(db, authUser?.uid, data?.id)
+        await deleteDoc(docRef);
+        setIsEditMode(false)
+    }
     const deleteImageFromStorage = (imageName = previousImageName) => {
-        console.log(imageName)
         const storageRef = ref(storage, `/${authUser?.uid}/${imageName}`)
         deleteObject(storageRef)
             .then(() => {
@@ -100,13 +108,9 @@ const AdminHOC = ()=>{
     return(
         <div>
             <button className={styles.buttonEditSave} onClick={Swap}>{isEditMode?"Save":"Edit"}</button>
-            {isEditMode&&data?
+            {isEditMode?
                 <Edit addInfo={addInfo} data={data} handleGIEEdit={updateInfo} setFileInfo={setFileInfo} fileInfo={fileInfo} handleFileUpload={handleFileUpload} uploading={uploading}/>
-                :isLoading?
-                    <h1>Loading</h1>
-                    :data?
-                    <ResumeInfo data={data}/>
-                        : <h1>No data</h1>
+                :<ResumeInfo data={data}/>
             }
         </div>
     )

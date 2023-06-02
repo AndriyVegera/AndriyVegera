@@ -10,9 +10,7 @@ function previewFile(file, callback) {
     };
     reader.readAsDataURL(file);
 }
-const Edit = ({data, handleGIEEdit, addInfo,setFileInfo, uploading, fileInfo,handleFileUpload})=> {
-    const [initialized, setInitialized] = useState(false);
-    // const data = useSelector((state) => state.user);
+const Edit = ({data, handleGIEEdit,setFileInfo, uploading, fileInfo,handleFileUpload})=> {
     const [skillsFormValue,setSkillsFormValue]=useState(data.skills);
     const [languagesFormValue,setLanguagesFormValue]=useState(data.languages);
     const [interestsFormValue,setInterestsFormValue]=useState(data.interests);
@@ -22,12 +20,6 @@ const Edit = ({data, handleGIEEdit, addInfo,setFileInfo, uploading, fileInfo,han
     const [courses,setCourses]= useState(data.courses);
     const [personalData, setPersonalData]=useState(data.personalData)
     const [experience,setExperience] = useState(data.experience)
-    useEffect(() => {
-        if (!initialized) {
-            addInfo();
-            setInitialized(true);
-        }
-    }, [initialized]);
     useEffect(()=>{
         setSkillsFormValue(data.skills)
         setLanguagesFormValue(data.languages)
@@ -35,33 +27,6 @@ const Edit = ({data, handleGIEEdit, addInfo,setFileInfo, uploading, fileInfo,han
         setSocialFormValue(data.socialNetworks)
     }, [data])
 
-    // skills:[
-    //   'A', 'B', 'C', ''
-    // ]
-// div skills
-//     {formValue.skills.map(skill, idx =>
-//     <input>
-//         value={skill}
-//         <button onClick={()=> {
-//             const skills = [...formValue.skills]
-//             skills.splice(idx, 1)
-//             setSkillsFormValue(skills)
-//         }}>Delete</button>
-//     </input>
-//     )}
-//     button Add
-//     ()=> {
-//     const skills = [...formValue.skills]
-//       skills.push('')
-//         setSkillsFormValue(skills)
-//     }
-//
-//     ()=> sendData(
-//       {
-//           skills: skillsFormValue,
-//           generalInfo: giFV
-//       }
-//     )
     const handleInputChange = (key,value)=>{
         setGeneralInfo((prevState)=>{
                 return{
