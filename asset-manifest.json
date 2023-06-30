@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.dc4fdffc.css",
-    "main.js": "/static/js/main.1abfb1ff.js",
-    "static/js/787.a71561b8.chunk.js": "/static/js/787.a71561b8.chunk.js",
-    "index.html": "/index.html",
-    "main.dc4fdffc.css.map": "/static/css/main.dc4fdffc.css.map",
-    "main.1abfb1ff.js.map": "/static/js/main.1abfb1ff.js.map",
-    "787.a71561b8.chunk.js.map": "/static/js/787.a71561b8.chunk.js.map"
+    "main.css": "/AndriyResume.github.io/static/css/main.dc4fdffc.css",
+    "main.js": "/AndriyResume.github.io/static/js/main.0c67f7ff.js",
+    "static/js/787.a71561b8.chunk.js": "/AndriyResume.github.io/static/js/787.a71561b8.chunk.js",
+    "index.html": "/AndriyResume.github.io/index.html",
+    "main.dc4fdffc.css.map": "/AndriyResume.github.io/static/css/main.dc4fdffc.css.map",
+    "main.0c67f7ff.js.map": "/AndriyResume.github.io/static/js/main.0c67f7ff.js.map",
+    "787.a71561b8.chunk.js.map": "/AndriyResume.github.io/static/js/787.a71561b8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dc4fdffc.css",
-    "static/js/main.1abfb1ff.js"
+    "static/js/main.0c67f7ff.js"
   ]
 }
