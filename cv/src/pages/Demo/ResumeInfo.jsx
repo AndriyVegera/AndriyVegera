@@ -3,6 +3,7 @@ import {useSelector} from "react-redux";
 export const ResumeInfo = ({data})=>{
     const mockData = useSelector((state) => state.user);
     return(
+        <div className={styles.general}>
         <div className={styles.container}>
             <div className={styles.profile}>
                 <div>
@@ -136,5 +137,6 @@ export const ResumeInfo = ({data})=>{
                 </div>
             </div>
         </div>
+            </div>
     )
 }
