@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.e9530f99.css",
-    "main.js": "/static/js/main.d3c8b0a3.js",
-    "static/js/787.a71561b8.chunk.js": "/static/js/787.a71561b8.chunk.js",
-    "index.html": "/index.html",
-    "main.e9530f99.css.map": "/static/css/main.e9530f99.css.map",
-    "main.d3c8b0a3.js.map": "/static/js/main.d3c8b0a3.js.map",
-    "787.a71561b8.chunk.js.map": "/static/js/787.a71561b8.chunk.js.map"
+    "main.css": "/andriyresume.github.io/static/css/main.d5d83e0b.css",
+    "main.js": "/andriyresume.github.io/static/js/main.c41f66f6.js",
+    "static/js/787.a71561b8.chunk.js": "/andriyresume.github.io/static/js/787.a71561b8.chunk.js",
+    "index.html": "/andriyresume.github.io/index.html",
+    "main.d5d83e0b.css.map": "/andriyresume.github.io/static/css/main.d5d83e0b.css.map",
+    "main.c41f66f6.js.map": "/andriyresume.github.io/static/js/main.c41f66f6.js.map",
+    "787.a71561b8.chunk.js.map": "/andriyresume.github.io/static/js/787.a71561b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9530f99.css",
-    "static/js/main.d3c8b0a3.js"
+    "static/css/main.d5d83e0b.css",
+    "static/js/main.c41f66f6.js"
   ]
 }
