@@ -1,5 +1,5 @@
 export const AppRoutes={
-    MAIN:'/',
+    MAIN:'/AndriyVegera/',
     SIGNUP:'/signUp',
     LOGIN:'/login',
     USER:'/user/userId',
